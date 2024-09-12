@@ -1,0 +1,9 @@
+@import '@/shared/styles/colors.scss';
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: $white;
+}
