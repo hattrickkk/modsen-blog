@@ -23,7 +23,7 @@
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"sourceMap": true,
-		"rootDir": "src",
+		"rootDir": ".",
 		"plugins": [
 			{
 				"name": "next"
