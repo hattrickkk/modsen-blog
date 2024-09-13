@@ -1,0 +1,28 @@
+@import '@/shared/styles/mixins.scss';
+@import '@/shared/styles/sizes.scss';
+
+.posts {
+    padding: 128px 0;
+    @include flex-space-between;
+    align-items: stretch;
+    gap: 32px;
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .posts {
+        gap: 56px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .posts {
+        padding: 90px 0;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .posts {
+        padding: 65px 0;
+    }
+}

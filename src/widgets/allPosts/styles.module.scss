@@ -1,0 +1,24 @@
+@import '@/shared/styles/mixins.scss';
+@import '@/shared/styles/colors.scss';
+@import '@/shared/styles/sizes.scss';
+
+.wrapper {
+    @include flex-space-between;
+    flex-direction: column;
+
+    .header {
+        @include flex-space-between;
+        margin-bottom: 32px;
+        width: 100%;
+
+        a {
+            color: $purple;
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper .header {
+        margin-bottom: 16px;
+    }
+}
