@@ -1,10 +1,16 @@
-import path from "path";
+import path from 'path'
 
-export function webpack(config) {
-  config.resolve.alias = {
-    ...config.resolve.alias,
-    "@": path.resolve("/"),
-  };
+export default {
+    webpack(config) {
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            '@': path.resolve('/'),
+        }
 
-  return config;
+        return config
+    },
+
+    sassOptions: {
+        additionalData: `@import "@/shared/styles/colors.scss"; @import "@/shared/styles/sizes.scss"; @import "@/shared/styles/mixins.scss";`,
+    },
 }
