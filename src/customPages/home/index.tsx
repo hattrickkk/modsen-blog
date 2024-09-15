@@ -1,10 +1,11 @@
-import { Hero, PostsSection } from '@/widgets'
+import { CategorySection, Hero, PostsSection } from '@/widgets'
 
 export const Home = () => {
     return (
         <>
             <Hero />
             <PostsSection />
+            <CategorySection />
         </>
     )
 }

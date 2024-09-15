@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import clsx from 'clsx'
 
@@ -9,8 +7,9 @@ import styles from './styles.module.scss'
 
 type Props = {
     value: string
+    className?: string
 }
 
-export const Title = ({ value }: Props) => {
-    return <h3 className={clsx(styles.title, sen.className)}>{value}</h3>
+export const Title = ({ value, className }: Props) => {
+    return <h3 className={clsx(styles.title, sen.className, className && className)}>{value}</h3>
 }

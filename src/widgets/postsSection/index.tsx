@@ -12,7 +12,7 @@ export const PostsSection = () => {
         <div className={commonStyles.container}>
             <section className={styles.posts}>
                 <div>
-                    <Title value='Featured Post' />
+                    <Title value='Featured Post' className={styles.title} />
                     <FeaturedPostDisplay post={POST} />
                 </div>
                 <AllPosts />

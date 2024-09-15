@@ -1,0 +1,40 @@
+.card {
+    padding: 32px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    border: 1px solid rgba($gray, 0.3);
+
+    &:hover {
+        background-color: $yellow;
+    }
+
+    .iconWrapper {
+        background-color: $lightYellow;
+        border-radius: 15px;
+        @include flex-center;
+        width: 52px;
+        height: 52px;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: -0.04em;
+        color: $darkBlue;
+        margin-bottom: 5px;
+    }
+
+    .text {
+        font-weight: 400;
+        font-size: 16px;
+        color: $gray;
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .card {
+        padding: 26px;
+    }
+}
