@@ -10,7 +10,7 @@ export const POST = {
 }
 
 export const POSTS_ARR = Array(4)
-    .fill({ ...POST })
+    .fill(POST)
     .map((post, i) => {
         return {
             ...post,

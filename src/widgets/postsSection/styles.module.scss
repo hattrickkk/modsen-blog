@@ -1,6 +1,3 @@
-@import '@/shared/styles/mixins.scss';
-@import '@/shared/styles/sizes.scss';
-
 .posts {
     padding: 128px 0;
     @include flex-space-between;

@@ -5,13 +5,13 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { formateDate, type IPost } from '@/entities'
+import { formateDate, type Post } from '@/entities'
 import { sen } from '@/shared'
 
 import styles from './styles.module.scss'
 
 type Props = {
-    post: IPost
+    post: Post
 }
 
 export const SmallPost = ({ post: { title, created, author, id } }: Props) => {

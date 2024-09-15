@@ -1,2 +1,2 @@
-export type { IPost } from './post/model'
+export type { Post } from './post/model'
 export { formateDate } from './post/helpers'

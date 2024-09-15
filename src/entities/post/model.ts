@@ -1,6 +1,6 @@
 import { Category } from '@/shared'
 
-export interface IPost {
+export interface Post {
     id: string
     author: string
     title: string

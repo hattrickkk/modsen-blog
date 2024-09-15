@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { formateDate, type IPost } from '@/entities'
+import { formateDate, type Post } from '@/entities'
 import { sen } from '@/shared'
 
 import { NavigateButton } from '../navigateButton'
@@ -12,7 +12,7 @@ import postImage from './white-concrete-building-1838640.png'
 import styles from './styles.module.scss'
 
 type Props = {
-    post: IPost
+    post: Post
 }
 
 export const FeaturedPostDisplay = ({ post: { id, text, title, created, author, image } }: Props) => {
