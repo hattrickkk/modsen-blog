@@ -1,0 +1,156 @@
+.wrapper {
+    @include flex-space-between;
+
+    .menu {
+        @include flex-space-between;
+        margin-right: 32px;
+
+        .item {
+            &:not(:last-child) {
+                margin-right: 24px;
+            }
+
+            a {
+                color: $white;
+                transition: all ease 0.3s;
+
+                &:hover {
+                    color: $yellow;
+                }
+            }
+        }
+    }
+}
+
+.burgerButton {
+    background-color: transparent;
+    display: none;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    transition: all 0.3s ease;
+
+    span {
+        cursor: pointer;
+        position: absolute;
+        transition: all 0.3s ease;
+        background-color: $white;
+        width: 25px;
+        height: 1px;
+        border-radius: 3px;
+        right: 10px;
+
+        &::before,
+        &::after {
+            content: '';
+            background-color: $white;
+            width: 25px;
+            height: 1.5px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        &::after {
+            transform: translateY(7px);
+        }
+
+        &::before {
+            transform: translateY(-8px);
+        }
+    }
+
+    &:hover {
+        background-color: rgba($white, 0.1);
+
+        span {
+            background-color: $yellow;
+
+            &::after,
+            &::before {
+                background-color: $yellow;
+            }
+        }
+    }
+
+    &.active {
+        span {
+            background: rgba($black, 0);
+
+            &:hover {
+                background-color: rgba($white, 0.1);
+            }
+
+            &::before {
+                transform: translateY(0px) rotate(-45deg);
+            }
+
+            &::after {
+                transform: translateY(0px) rotate(45deg);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper {
+        position: absolute;
+        background-color: $darkBlue;
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include flex-center;
+        justify-content: flex-start;
+        transition: all ease-in-out 0.4s;
+
+        &.open {
+            right: 0;
+        }
+
+        .menu {
+            flex-direction: column;
+            margin: 100px 0 32px;
+
+            .item {
+                font-size: 18px;
+
+                &:not(:last-child) {
+                    margin-right: 0;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+
+    .burgerButton {
+        display: block;
+        z-index: 110;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper {
+        right: -150%;
+        width: 100vw;
+        top: 0;
+
+        .menu {
+            margin: 120px 0 38px;
+
+            .item {
+                font-size: 20px;
+
+                &:not(:last-child) {
+                    margin-bottom: 28px;
+                }
+            }
+        }
+    }
+}

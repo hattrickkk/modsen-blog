@@ -1,0 +1,21 @@
+.button {
+    padding: 16px 48px;
+    background-color: $yellow;
+    transition: all ease 0.3s;
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Sen', sans-serif;
+
+    &:hover {
+        background-color: $darkYellow;
+    }
+
+    &.secondary {
+        background-color: $white;
+        padding: 16px 20px;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

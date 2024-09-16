@@ -51,11 +51,10 @@ input::-ms-clear {
     display: none;
 }
 
-
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
     cursor: pointer;
 }
 
@@ -92,3 +91,9 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: $darkGray;
+}

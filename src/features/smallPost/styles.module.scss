@@ -1,0 +1,63 @@
+.post {
+    padding: 32px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:hover {
+        background-color: $lightYellow;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 24px;
+        color: $darkBlue;
+        max-height: 85px;
+        overflow: hidden;
+        max-width: 370px;
+    }
+
+    .copyright {
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+
+        a {
+            color: $purple;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .post {
+        padding: 26px;
+
+        .title {
+            max-height: 60px;
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .post {
+        width: 100%;
+
+        .title {
+            max-width: none;
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .post {
+        padding: 18px 24px;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        .title {
+            font-size: 20px;
+        }
+    }
+}
