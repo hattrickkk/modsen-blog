@@ -32,3 +32,9 @@
         }
     }
 }
+
+@media screen and (max-width: $PHONE) {
+    .categories {
+        padding: 65px 0;
+    }
+}

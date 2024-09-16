@@ -11,5 +11,5 @@ type Props = {
 }
 
 export const Title = ({ value, className }: Props) => {
-    return <h3 className={clsx(styles.title, sen.className, className && className)}>{value}</h3>
+    return <h2 className={clsx(styles.title, sen.className, className && className)}>{value}</h2>
 }

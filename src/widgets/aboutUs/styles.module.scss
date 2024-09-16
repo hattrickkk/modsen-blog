@@ -1,0 +1,145 @@
+.section {
+    .inner {
+        @include flex-space-between;
+        gap: 60px;
+        padding: 80px;
+        background-color: $lightPurple;
+        align-items: stretch;
+    }
+
+    .decor {
+        height: 23px;
+        display: flex;
+        justify-content: flex-end;
+
+        .yellow,
+        .purple,
+        .transparent {
+            height: 100%;
+        }
+
+        .yellow {
+            background-color: $yellow;
+            flex: 0 1 780px;
+        }
+
+        .purple {
+            background-color: $purple;
+            flex: 0 1 280px;
+        }
+
+        .transparent {
+            flex: 0 1 220px;
+        }
+    }
+
+    .column {
+        &:first-child {
+            flex: 1 0 485px;
+        }
+    }
+
+    .subtitle {
+        font-weight: 600;
+        letter-spacing: 0.19em;
+        text-transform: uppercase;
+        color: $darkBlue;
+        margin-bottom: 25px;
+        line-height: 20px;
+    }
+
+    .mainTitle {
+        text-align: left;
+        margin-bottom: 16px;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: -0.04em;
+        color: $darkBlue;
+        margin-bottom: 16px;
+    }
+
+    .link {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 32px;
+        color: $purple;
+        margin-top: 16px;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: $DESKTOP) {
+    .section {
+        .mainTitle {
+            font-size: 32px;
+        }
+
+        .column {
+            &:first-child {
+                flex: 1 0 360px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .section {
+        .inner {
+            padding: 60px;
+            gap: 45px;
+        }
+
+        .mainTitle {
+            font-size: 30px;
+            line-height: 42px;
+        }
+
+        .title {
+            line-height: 38px;
+        }
+
+        .column {
+            &:first-child {
+                flex: 1 0 360px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .section {
+        .inner {
+            flex-direction: column;
+            gap: 60px;
+            padding: 50px;
+        }
+
+        .column {
+            &:first-child {
+                flex: 1 1 auto;
+            }
+        }
+
+        .subtitle {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section .inner {
+        gap: 50px;
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section .inner {
+        gap: 40px;
+        padding: 30px;
+    }
+}
