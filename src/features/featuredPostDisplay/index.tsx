@@ -27,7 +27,7 @@ export const FeaturedPostDisplay = ({ post: { id, text, title, created, author, 
                 </p>
                 <h2 className={clsx(styles.title, sen.className)}>{title}</h2>
                 <p className={styles.text}>{text}</p>
-                <NavigateButton pathName={`post/${id}`} />
+                <NavigateButton pathName={`/post/${id}`} />
             </div>
         </div>
     )

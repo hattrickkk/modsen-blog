@@ -24,9 +24,9 @@ export const Menu = () => {
         <>
             <div className={clsx(styles.wrapper, isHeaderOpen && styles.open)} ref={menuRef}>
                 <ul className={styles.menu}>
-                    {HEADER_LINKS.map(link => (
-                        <li key={link.path} className={styles.item}>
-                            <Link href={link.path}>{link.name}</Link>
+                    {HEADER_LINKS.map(({ path, name }) => (
+                        <li key={path} className={styles.item}>
+                            <Link href={path}>{name}</Link>
                         </li>
                     ))}
                 </ul>
