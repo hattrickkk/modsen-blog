@@ -1,0 +1,55 @@
+.section {
+    padding-bottom: 96px;
+
+    .wrapper {
+        @include flex-space-between;
+
+        .block {
+            line-height: 20px;
+
+            span {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                display: block;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .section .wrapper {
+        flex-wrap: wrap;
+        row-gap: 30px;
+
+        & > * {
+            flex: 1 1 30%;
+        }
+
+        .block {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section .wrapper {
+        & > * {
+            flex: 1 1 45%;
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section {
+        padding-bottom: 65px;
+
+        .wrapper {
+            row-gap: 35px;
+
+            & > * {
+                flex: 1 1 100%;
+            }
+        }
+    }
+}

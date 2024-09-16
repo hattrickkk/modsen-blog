@@ -1,4 +1,4 @@
-import { AboutUs, AuthorsSection, CategorySection, Hero, OurStory, PostsSection } from '@/widgets'
+import { AboutUs, AuthorsSection, CategorySection, Hero, OurStory, PartnersSection, PostsSection } from '@/widgets'
 
 export const Home = () => {
     return (
@@ -9,6 +9,7 @@ export const Home = () => {
             <CategorySection />
             <OurStory />
             <AuthorsSection />
+            <PartnersSection />
         </>
     )
 }
