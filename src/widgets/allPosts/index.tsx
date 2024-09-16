@@ -1,9 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { SmallPost } from '@/features/smallPost'
-import { paths, Title } from '@/shared'
-import { POSTS_ARR } from '@/shared/mocks/posts'
+import { SmallPost } from '@/features'
+import { paths, POSTS_ARR, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 

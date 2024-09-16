@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 import { Author } from '@/entities'
 import { fetchAuthors } from '@/entities/authors/helpers'
-import { AuthorCard } from '@/features/authorCard'
+import { AuthorCard } from '@/features'
 import { commonStyles, Title } from '@/shared'
 
 import styles from './styles.module.scss'

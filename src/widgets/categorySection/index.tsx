@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { commonStyles, Title } from '@/shared'
-import { CategoryCard } from '@/shared/ui/categoryCard'
+import { CategoryCard, commonStyles, Title } from '@/shared'
 
 import { CATEGORY_ITEMS } from './constants/categoryItems'
 
