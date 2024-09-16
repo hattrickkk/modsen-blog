@@ -9,10 +9,11 @@ export const sendEmail = async (email: string) => {
         try {
             emailjs.init(publicKey)
             await emailjs.send(serviceId, templateId, { email })
+            return { status: 200, message: 'Thanks for subscribing to our blog!' }
         } catch (error) {
-            console.error(error)
+            return { status: 400, message: (error as Error).message }
         }
     } else {
-        console.error('Something went wrong')
+        return { status: 400, message: 'Something went wrong' }
     }
 }

@@ -25,10 +25,12 @@ export const Subscribe = () => {
     const [emailField, emailError] = useValidateInput('email', control)
 
     const handleFormSubmit = useCallback(
-        ({ email }: FormData) => {
-            sendEmail(email)
-            reset()
-            toast('Thanks for subscribing to our blog!', NOTIFY_OPTIONS)
+        async ({ email }: FormData) => {
+            const { status, message } = await sendEmail(email)
+            if (status === 200) {
+                reset()
+            }
+            toast(message, NOTIFY_OPTIONS)
         },
         [reset]
     )
