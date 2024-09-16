@@ -1,4 +1,13 @@
-import { AboutUs, AuthorsSection, CategorySection, Hero, OurStory, PartnersSection, PostsSection } from '@/widgets'
+import {
+    AboutUs,
+    AuthorsSection,
+    CategorySection,
+    Hero,
+    OurStory,
+    PartnersSection,
+    PostsSection,
+    TeamSection,
+} from '@/widgets'
 
 export const Home = () => {
     return (
@@ -10,6 +19,7 @@ export const Home = () => {
             <OurStory />
             <AuthorsSection />
             <PartnersSection />
+            <TeamSection />
         </>
     )
 }
