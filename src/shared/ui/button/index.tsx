@@ -7,13 +7,18 @@ import styles from './styles.module.scss'
 
 type Props = {
     children?: string
-    onClick: VoidFunction
+    onClick?: VoidFunction
     secondary?: boolean
+    type?: 'button' | 'submit'
 }
 
-export const Button = ({ children, onClick, secondary = false }: Props) => {
+export const Button = ({ children, onClick, secondary = false, type = 'button' }: Props) => {
     return (
-        <button className={clsx(styles.button, sen.className, secondary && styles.secondary)} onClick={onClick}>
+        <button
+            className={clsx(styles.button, sen.className, secondary && styles.secondary)}
+            onClick={onClick}
+            type={type}
+        >
             {children ?? 'Read More >'}
         </button>
     )

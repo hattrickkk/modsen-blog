@@ -1,6 +1,8 @@
+import { SOCIAL_LINKS } from './socialsLinks'
+
 const baseAuthorInfo = {
     description: 'Content Writer @Company',
-    socials: ['https://ru-ru.facebook.com', 'https://x.com', 'https://www.instagram.com', 'https://www.linkedin.com'],
+    socials: SOCIAL_LINKS,
 }
 
 export const AUTHORS = [

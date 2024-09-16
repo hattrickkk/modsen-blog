@@ -4,9 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 import { Author } from '@/entities'
-import { sen } from '@/shared'
-
-import { SOCIALS } from './constants/socials'
+import { sen, SOCIALS } from '@/shared'
 
 import styles from './styles.module.scss'
 
