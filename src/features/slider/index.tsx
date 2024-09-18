@@ -1,5 +1,5 @@
 'use client'
-import React, { memo, useCallback, useMemo, useState } from 'react'
+import React, { memo, useCallback, useState } from 'react'
 
 import { TESTIMONIALS } from '@/shared'
 
@@ -16,7 +16,7 @@ export const Slider = memo(() => {
 
     const handleRightArrowClick = useCallback(() => setOffset(prev => prev - 100), [])
 
-    const maxOffset = useMemo(() => -(TESTIMONIALS.length - 1) * 100, [])
+    const maxOffset = -(TESTIMONIALS.length - 1) * 100
 
     return (
         <div className={styles.slider}>

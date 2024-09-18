@@ -7,25 +7,21 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Button, InputWithError, NOTIFY_OPTIONS, Title, useValidateInput } from '@/shared'
 
-import { emailSchema } from './utilts/schema'
-import { sendEmail } from './utilts/sendEmail'
+import { emailSchema, SubscribeFormData } from './utils/schema'
+import { sendEmail } from './utils/sendEmail'
 
 import styles from './styles.module.scss'
 
-type FormData = {
-    email: string
-}
-
 export const Subscribe = memo(() => {
-    const { control, handleSubmit, reset } = useForm<FormData>({
+    const { control, handleSubmit, reset } = useForm<SubscribeFormData>({
         resolver: zodResolver(emailSchema),
         mode: 'onBlur',
     })
 
-    const [emailField, emailError] = useValidateInput('email', control)
+    const [emailField, emailError] = useValidateInput<SubscribeFormData>('email', control)
 
     const handleFormSubmit = useCallback(
-        async ({ email }: FormData) => {
+        async ({ email }: SubscribeFormData) => {
             const { status, message } = await sendEmail(email)
             if (status === 200) {
                 reset()
