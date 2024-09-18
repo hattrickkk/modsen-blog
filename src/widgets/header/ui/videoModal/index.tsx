@@ -43,7 +43,7 @@ export const VideoModal = memo(({ isFrameOpen, closeFrame }: Props) => {
                     ref={frameRef}
                     width='50%'
                     height='50%'
-                    src='https://www.youtube.com/embed/VXDTjM67d30?si=eSJJ40NTcQYm88VJ'
+                    src='https://www.youtube.com/embed/VXDTjM67d30?autoplay=1&si=eSJJ40NTcQYm88VJ'
                     title='YouTube video player'
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                     allowFullScreen
