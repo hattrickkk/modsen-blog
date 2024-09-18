@@ -4,9 +4,7 @@ import React, { useRef } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-import { Button } from '@/shared'
-import { useOpenState } from '@/shared/utils/hooks/useOpenState'
-import { useOutsideClick } from '@/shared/utils/hooks/useOutsideClick'
+import { Button, useOpenState, useOutsideClick } from '@/shared'
 
 import { HEADER_LINKS } from '../../constants/headerLinks'
 import { VideoModal } from '../videoModal'

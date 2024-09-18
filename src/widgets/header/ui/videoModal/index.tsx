@@ -3,8 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
 
-import { Loader } from '@/shared'
-import { useOutsideClick } from '@/shared/utils/hooks/useOutsideClick'
+import { Loader, useOutsideClick } from '@/shared'
 
 import styles from './styles.module.scss'
 

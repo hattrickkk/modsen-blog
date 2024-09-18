@@ -7,6 +7,7 @@ import {
     PartnersSection,
     PostsSection,
     TeamSection,
+    Testimonials,
 } from '@/widgets'
 
 export const Home = () => {
@@ -19,6 +20,7 @@ export const Home = () => {
             <OurStory />
             <AuthorsSection />
             <PartnersSection />
+            <Testimonials />
             <TeamSection />
         </>
     )
