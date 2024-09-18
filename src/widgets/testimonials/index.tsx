@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Slider } from '@/features'
 import { commonStyles, Title } from '@/shared'
 

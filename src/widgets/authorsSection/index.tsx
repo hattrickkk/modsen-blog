@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
 import { Author } from '@/entities'
 import { fetchAuthors } from '@/entities/authors/helpers'
@@ -9,7 +9,7 @@ import { commonStyles, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
-export const AuthorsSection = () => {
+export const AuthorsSection = memo(() => {
     const [authors, setAuthors] = useState<Author[]>([])
 
     useEffect(() => {
@@ -30,4 +30,4 @@ export const AuthorsSection = () => {
             </div>
         </section>
     )
-}
+})

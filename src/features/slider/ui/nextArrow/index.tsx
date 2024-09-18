@@ -1,12 +1,10 @@
-import { memo } from 'react'
-
 import styles from './styles.module.scss'
 
 type Props = {
     onClick: VoidFunction
 }
 
-export const NextArrow = memo(({ onClick }: Props) => {
+export const NextArrow = ({ onClick }: Props) => {
     return (
         <div className={styles.arrow} onClick={onClick}>
             <svg width='28' height='16' viewBox='0 0 28 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -17,4 +15,4 @@ export const NextArrow = memo(({ onClick }: Props) => {
             </svg>
         </div>
     )
-})
+}

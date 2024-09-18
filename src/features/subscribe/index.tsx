@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -16,7 +16,7 @@ type FormData = {
     email: string
 }
 
-export const Subscribe = () => {
+export const Subscribe = memo(() => {
     const { control, handleSubmit, reset } = useForm<FormData>({
         resolver: zodResolver(emailSchema),
         mode: 'onBlur',
@@ -45,4 +45,4 @@ export const Subscribe = () => {
             </form>
         </div>
     )
-}
+})

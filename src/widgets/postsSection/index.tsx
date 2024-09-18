@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { FeaturedPostDisplay } from '@/features'
 import { commonStyles, POST, Title } from '@/shared'
 

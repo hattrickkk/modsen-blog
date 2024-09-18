@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { memo, useRef } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 
@@ -11,7 +11,7 @@ import { VideoModal } from '../videoModal'
 
 import styles from './styles.module.scss'
 
-export const Menu = () => {
+export const Menu = memo(() => {
     const [isHeaderOpen, closeHeader, openHeader] = useOpenState()
     const [isFrameOpen, closeFrame, openFrame] = useOpenState()
 
@@ -41,4 +41,4 @@ export const Menu = () => {
             <VideoModal isFrameOpen={isFrameOpen} closeFrame={closeFrame} />
         </>
     )
-}
+})

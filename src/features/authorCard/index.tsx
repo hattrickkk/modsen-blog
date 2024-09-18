@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -14,7 +14,7 @@ type Props = {
     author: Author
 }
 
-export const AuthorCard = ({ author: { image, name, description, socials, id } }: Props) => {
+export const AuthorCard = memo(({ author: { image, name, description, socials, id } }: Props) => {
     const router = useRouter()
 
     const handleCardClick = useCallback(
@@ -40,4 +40,4 @@ export const AuthorCard = ({ author: { image, name, description, socials, id } }
             </div>
         </div>
     )
-}
+})

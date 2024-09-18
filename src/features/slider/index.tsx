@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { memo, useCallback, useMemo, useState } from 'react'
 
 import { TESTIMONIALS } from '@/shared'
 
@@ -9,7 +9,7 @@ import { PrevArrow } from './ui/prevArrow'
 
 import styles from './styles.module.scss'
 
-export const Slider = () => {
+export const Slider = memo(() => {
     const [offset, setOffset] = useState(0)
 
     const handleLeftArrowClick = useCallback(() => setOffset(prev => prev + 100), [])
@@ -33,4 +33,4 @@ export const Slider = () => {
             </div>
         </div>
     )
-}
+})

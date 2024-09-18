@@ -1,5 +1,5 @@
 'use client'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
 
@@ -12,7 +12,7 @@ type Props = {
     closeFrame: VoidFunction
 }
 
-export const VideoModal = ({ isFrameOpen, closeFrame }: Props) => {
+export const VideoModal = memo(({ isFrameOpen, closeFrame }: Props) => {
     const [mounted, setMounted] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const frameRef = useRef<HTMLIFrameElement>(null)
@@ -53,4 +53,4 @@ export const VideoModal = ({ isFrameOpen, closeFrame }: Props) => {
         </div>,
         document.body
     )
-}
+})
