@@ -1,3 +1,3 @@
-import { MENU_ITEMS } from '@/shared/constants/meniItems'
+import { MENU_ITEMS } from '@/shared'
 
 export const HEADER_LINKS = [...MENU_ITEMS, { name: 'Language', path: '/eu' }]
