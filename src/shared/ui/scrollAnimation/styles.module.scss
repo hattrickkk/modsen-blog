@@ -1,0 +1,26 @@
+.block {
+    transition: all ease 0.5s;
+    opacity: 0;
+    width: 100%;
+}
+
+.toTop {
+    transform: translateY(70%);
+}
+
+.toBottom {
+    transform: translateY(-70%);
+}
+
+.toRight {
+    transform: translateX(-70%);
+}
+
+.toLeft {
+    transform: translateX(70%);
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}

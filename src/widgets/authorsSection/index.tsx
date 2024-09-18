@@ -5,7 +5,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { Author } from '@/entities'
 import { fetchAuthors } from '@/entities/authors/helpers'
 import { AuthorCard } from '@/features'
-import { commonStyles, Title } from '@/shared'
+import { AnimationTypes, commonStyles, ScrollAnimation, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
@@ -21,10 +21,14 @@ export const AuthorsSection = memo(() => {
     return (
         <section className={styles.section}>
             <div className={commonStyles.container}>
-                <Title value='List of Authors' />
+                <ScrollAnimation type={AnimationTypes.toLeft}>
+                    <Title value='List of Authors' />
+                </ScrollAnimation>
                 <div className={styles.wrapper}>
-                    {authors.map(item => (
-                        <AuthorCard author={item} key={item.image} />
+                    {authors.map((item, i) => (
+                        <ScrollAnimation type={AnimationTypes.toLeft} delay={`0.${i}`}>
+                            <AuthorCard author={item} key={item.image} />
+                        </ScrollAnimation>
                     ))}
                 </div>
             </div>

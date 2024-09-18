@@ -1,4 +1,4 @@
-import { CategoryCard, commonStyles, Title } from '@/shared'
+import { AnimationTypes, CategoryCard, commonStyles, ScrollAnimation, Title } from '@/shared'
 
 import { CATEGORY_ITEMS } from './constants/categoryItems'
 
@@ -8,10 +8,14 @@ export const CategorySection = () => {
     return (
         <section className={styles.categories}>
             <div className={commonStyles.container}>
-                <Title value='Choose A Catagory' />
+                <ScrollAnimation type={AnimationTypes.toRight}>
+                    <Title value='Choose A Catagory' />
+                </ScrollAnimation>
                 <div className={styles.wrapper}>
-                    {CATEGORY_ITEMS.map(item => (
-                        <CategoryCard {...item} key={item.path} />
+                    {CATEGORY_ITEMS.map((item, i) => (
+                        <ScrollAnimation type={AnimationTypes.toRight} delay={`0.${i}`}>
+                            <CategoryCard {...item} key={item.path} />
+                        </ScrollAnimation>
                     ))}
                 </div>
             </div>

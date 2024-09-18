@@ -1,5 +1,6 @@
 import { FeaturedPostDisplay } from '@/features'
-import { commonStyles, POST, Title } from '@/shared'
+import { AnimationTypes, commonStyles, POST, Title } from '@/shared'
+import { ScrollAnimation } from '@/shared'
 
 import { AllPosts } from '../allPosts'
 
@@ -9,10 +10,12 @@ export const PostsSection = () => {
     return (
         <div className={commonStyles.container}>
             <section className={styles.posts}>
-                <div>
-                    <Title value='Featured Post' className={styles.title} />
-                    <FeaturedPostDisplay post={POST} />
-                </div>
+                <ScrollAnimation type={AnimationTypes.toRight}>
+                    <>
+                        <Title value='Featured Post' className={styles.title} />
+                        <FeaturedPostDisplay post={POST} />
+                    </>
+                </ScrollAnimation>
                 <AllPosts />
             </section>
         </div>

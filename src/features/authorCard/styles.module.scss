@@ -5,7 +5,7 @@
     background-color: $lightGray;
     @include flex-space-between;
     flex-direction: column;
-    flex: 1 1 25%;
+    height: 100%;
 
     &:hover {
         background-color: $lightYellow;
@@ -44,17 +44,5 @@
     .socials {
         @include flex-space-between;
         gap: 16px;
-    }
-}
-
-@media screen and (max-width: $SMALL_DESKTOP) {
-    .card {
-        flex: 1 1 45%;
-    }
-}
-
-@media screen and (max-width: $SMALL_TABLET) {
-    .card {
-        flex: 1 1 100%;
     }
 }
