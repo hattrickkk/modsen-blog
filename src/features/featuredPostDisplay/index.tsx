@@ -1,8 +1,10 @@
+'use client'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
-import { formateDate, type Post } from '@/entities'
+import { type Post, useFormateDate } from '@/entities'
 import { sen } from '@/shared'
 
 import { NavigateButton } from '../navigateButton'
@@ -15,6 +17,8 @@ type Props = {
 }
 
 export const FeaturedPostDisplay = ({ post: { id, text, title, created, author, image } }: Props) => {
+    const date = useFormateDate(created)
+    const t = useTranslations('hero')
     return (
         <div className={styles.post}>
             <div className={styles.wrapper}>
@@ -22,7 +26,7 @@ export const FeaturedPostDisplay = ({ post: { id, text, title, created, author, 
                     <Image src={image ?? postImage} alt='post-photo' />
                 </div>
                 <p className={styles.copyright}>
-                    By <Link href={'/'}>{author}</Link> | {formateDate(created)}
+                    {t('copyright')} <Link href={'/'}>{author}</Link> | {date}
                 </p>
                 <h2 className={clsx(styles.title, sen.className)}>{title}</h2>
                 <p className={styles.text}>{text}</p>

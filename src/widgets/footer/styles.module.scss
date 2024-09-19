@@ -24,6 +24,8 @@
         @include flex-space-between;
 
         .item {
+            text-align: center;
+
             &:not(:last-child) {
                 margin-right: 24px;
             }
@@ -54,7 +56,7 @@
     }
 }
 
-@media screen and (max-width: $TABLET) {
+@media screen and (max-width: $LARGE_TABLET) {
     .footer {
         .logo {
             margin-bottom: 16px;

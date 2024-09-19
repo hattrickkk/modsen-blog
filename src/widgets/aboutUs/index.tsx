@@ -1,12 +1,15 @@
-import React from 'react'
+'use client'
+
 import clsx from 'clsx'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { AnimationTypes, commonStyles, paths, ScrollAnimation, sen, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
 export const AboutUs = () => {
+    const t = useTranslations()
     return (
         <ScrollAnimation type={AnimationTypes.toLeft}>
             <section className={styles.section}>
@@ -18,24 +21,19 @@ export const AboutUs = () => {
                     </div>
                     <div className={styles.inner}>
                         <div className={styles.column}>
-                            <h4 className={styles.subtitle}>ABOUT US</h4>
-                            <Title
-                                value='We are a community of content writers who share their learnings'
-                                className={styles.mainTitle}
-                            />
+                            <h4 className={styles.subtitle}>{t('about.aboutUs')} </h4>
+                            <Title value={t('about.title')} className={styles.mainTitle} />
                             <p>
                                 Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore et dolore magna aliqua.
                             </p>
                             <Link href={paths.ABOUT} className={clsx(styles.link, sen.className)}>
-                                Read More &gt;
+                                {t('button.title')}
                             </Link>
                         </div>
                         <div className={styles.column}>
-                            <h4 className={styles.subtitle}>Our mision</h4>
-                            <h3 className={clsx(styles.title, sen.className)}>
-                                We are a community of content writers who share their learnings
-                            </h3>
+                            <h4 className={styles.subtitle}>{t('about.ourMission')} </h4>
+                            <h3 className={clsx(styles.title, sen.className)}>{t('about.subtitle')}</h3>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud

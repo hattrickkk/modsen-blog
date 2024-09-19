@@ -1,6 +1,9 @@
 import path from 'path'
+import createNextIntlPlugin from 'next-intl/plugin'
 
-export default {
+const withNextIntl = createNextIntlPlugin()
+
+const nextConfig = {
     webpack(config) {
         config.resolve.alias = {
             ...config.resolve.alias,
@@ -24,3 +27,4 @@ export default {
         ],
     },
 }
+export default withNextIntl(nextConfig)

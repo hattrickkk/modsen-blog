@@ -1,5 +1,7 @@
+'use client'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 import { NavigateButton } from '@/features'
 import { AnimationTypes, commonStyles, paths, ScrollAnimation, sen } from '@/shared'
@@ -9,6 +11,7 @@ import back from './back.png'
 import styles from './styles.module.scss'
 
 export const OurStory = () => {
+    const t = useTranslations('ourStory')
     return (
         <section className={styles.section}>
             <div className={commonStyles.container}>
@@ -20,16 +23,14 @@ export const OurStory = () => {
                     </ScrollAnimation>
                     <ScrollAnimation type={AnimationTypes.toLeft} delay={0.1}>
                         <div className={styles.block}>
-                            <h4 className={styles.subtitle}>Why we started </h4>
-                            <h3 className={clsx(styles.title, sen.className)}>
-                                It started out as a simple idea and evolved into our passion
-                            </h3>
+                            <h4 className={styles.subtitle}>{t('subtitle')}</h4>
+                            <h3 className={clsx(styles.title, sen.className)}>{t('title')}</h3>
                             <p className={styles.text}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip.
                             </p>
-                            <NavigateButton pathName={paths.ABOUT} value='Discover our story >' />
+                            <NavigateButton pathName={paths.ABOUT} value={t('button')} />
                         </div>
                     </ScrollAnimation>
                 </div>

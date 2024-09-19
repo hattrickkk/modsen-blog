@@ -1,6 +1,7 @@
 'use client'
 
 import React, { memo, useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 import { Author } from '@/entities'
 import { fetchAuthors } from '@/entities/authors/helpers'
@@ -18,11 +19,13 @@ export const AuthorsSection = memo(() => {
             .catch(err => console.error(err))
     }, [])
 
+    const t = useTranslations('authors')
+
     return (
         <section className={styles.section}>
             <div className={commonStyles.container}>
                 <ScrollAnimation type={AnimationTypes.toLeft}>
-                    <Title value='List of Authors' />
+                    <Title value={t('title')} />
                 </ScrollAnimation>
                 <div className={styles.wrapper}>
                     {authors.map((item, i) => (

@@ -1,5 +1,6 @@
-import React from 'react'
+'uswe client'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { Subscribe } from '@/features'
 import { commonStyles, SOCIAL_LINKS, SOCIALS } from '@/shared'
@@ -9,6 +10,7 @@ import { FOOTER_LINKS } from './constants/footerLinks'
 import styles from './styles.module.scss'
 
 export const Footer = () => {
+    const t = useTranslations()
     return (
         <footer className={styles.footer}>
             <div className={commonStyles.container}>
@@ -19,7 +21,7 @@ export const Footer = () => {
                     <ul className={styles.menu}>
                         {FOOTER_LINKS.map(({ path, name }) => (
                             <li key={path} className={styles.item}>
-                                <Link href={path}>{name}</Link>
+                                <Link href={path}>{t(`menuItems.${name}`)}</Link>
                             </li>
                         ))}
                     </ul>
@@ -27,7 +29,7 @@ export const Footer = () => {
                 <Subscribe />
                 <div className={styles.row}>
                     <p className={styles.text}>
-                        Finstreet 118 2561 Fintown <br /> Hello@finsweet.com 020 7993 2905
+                        {t('footer.address')} <br /> Hello@finsweet.com 020 7993 2905
                     </p>
                     <div className={styles.socials}>
                         {SOCIALS.map(({ Icon }, i) => (

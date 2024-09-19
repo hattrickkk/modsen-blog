@@ -4,8 +4,9 @@ import { memo, useCallback } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 
-import { formateDate, type Post } from '@/entities'
+import { type Post, useFormateDate } from '@/entities'
 import { sen } from '@/shared'
 
 import styles from './styles.module.scss'
@@ -16,15 +17,20 @@ type Props = {
 
 export const SmallPost = memo(({ post: { title, created, author, id } }: Props) => {
     const router = useRouter()
+    const t = useTranslations('hero')
+    const locale = useLocale()
+
     const handlePostClick = useCallback(() => {
-        router.push(`post/${id}`)
-    }, [id, router])
+        router.push(`/${locale}/post/${id}`)
+    }, [id, router, locale])
+
+    const date = useFormateDate(created)
 
     return (
         <div className={styles.post} onClick={handlePostClick}>
             <div className={styles.wrapper}>
                 <p className={styles.copyright}>
-                    By <Link href={'/'}>{author}</Link> | {formateDate(created)}
+                    {t('copyright')} <Link href={'/'}>{author}</Link> | {date}
                 </p>
                 <h3 className={clsx(styles.title, sen.className)}>{title}</h3>
             </div>

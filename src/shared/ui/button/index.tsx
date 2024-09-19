@@ -1,5 +1,8 @@
+'use client'
+
 import { ReactNode } from 'react'
 import clsx from 'clsx'
+import { useTranslations } from 'next-intl'
 
 import { sen } from '@/shared'
 
@@ -12,14 +15,15 @@ type Props = {
     type?: 'button' | 'submit'
 }
 
-export const Button = ({ children = 'Read More >', onClick, secondary = false, type = 'button' }: Props) => {
+export const Button = ({ children, onClick, secondary = false, type = 'button' }: Props) => {
+    const t = useTranslations('button')
     return (
         <button
             className={clsx(styles.button, sen.className, secondary && styles.secondary)}
             onClick={onClick}
             type={type}
         >
-            {children}
+            {children ?? t('title')}
         </button>
     )
 }
