@@ -1,0 +1,14 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+
+    input {
+        width: 100%;
+    }
+
+    .error {
+        color: $red;
+        position: absolute;
+        bottom: -35px;
+    }
+}

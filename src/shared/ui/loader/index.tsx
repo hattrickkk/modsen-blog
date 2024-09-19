@@ -1,8 +1,6 @@
-import { memo } from 'react'
-
 import styles from './style.module.scss'
 
-export const Loader = memo(() => {
+export const Loader = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.box}>
@@ -10,4 +8,4 @@ export const Loader = memo(() => {
             </div>
         </div>
     )
-})
+}

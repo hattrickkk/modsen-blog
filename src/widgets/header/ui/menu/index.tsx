@@ -1,19 +1,17 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { memo, useRef } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-import { Button } from '@/shared'
-import { useOpenState } from '@/shared/utils/hooks/useOpenState'
-import { useOutsideClick } from '@/shared/utils/hooks/useOutsideClick'
+import { Button, useOpenState, useOutsideClick } from '@/shared'
 
 import { HEADER_LINKS } from '../../constants/headerLinks'
 import { VideoModal } from '../videoModal'
 
 import styles from './styles.module.scss'
 
-export const Menu = () => {
+export const Menu = memo(() => {
     const [isHeaderOpen, closeHeader, openHeader] = useOpenState()
     const [isFrameOpen, closeFrame, openFrame] = useOpenState()
 
@@ -24,9 +22,9 @@ export const Menu = () => {
         <>
             <div className={clsx(styles.wrapper, isHeaderOpen && styles.open)} ref={menuRef}>
                 <ul className={styles.menu}>
-                    {HEADER_LINKS.map(link => (
-                        <li key={link.path} className={styles.item}>
-                            <Link href={link.path}>{link.name}</Link>
+                    {HEADER_LINKS.map(({ path, name }) => (
+                        <li key={path} className={styles.item}>
+                            <Link href={path}>{name}</Link>
                         </li>
                     ))}
                 </ul>
@@ -43,4 +41,4 @@ export const Menu = () => {
             <VideoModal isFrameOpen={isFrameOpen} closeFrame={closeFrame} />
         </>
     )
-}
+})

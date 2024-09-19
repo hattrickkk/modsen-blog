@@ -1,10 +1,8 @@
-import React from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 
+import { NavigateButton } from '@/features'
 import { commonStyles, sen } from '@/shared'
-
-import { HeroButton } from './ui'
 
 import styles from './styles.module.scss'
 
@@ -26,7 +24,7 @@ export const Hero = () => {
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                         pariatur. Excepteur sint occaecat cupidatat non proident.
                     </p>
-                    <HeroButton />
+                    <NavigateButton pathName={`post/${1}`} />
                 </div>
             </div>
         </section>

@@ -1,0 +1,64 @@
+.slider {
+    min-height: 310px;
+    position: relative;
+
+    .arrows {
+        @include flex-space-between;
+        gap: 24px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 20;
+    }
+
+    .window {
+        margin-left: 90px;
+        overflow: hidden;
+        max-width: 510px;
+    }
+
+    .commentsWrapper {
+        display: flex;
+        max-width: 510px;
+        transition: all ease 0.3s;
+    }
+}
+
+@media screen and (max-width: $DESKTOP) {
+    .slider .window {
+        margin-left: 70px;
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .slider {
+        min-height: 230px;
+
+        .window {
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .slider {
+        min-height: 320px;
+
+        .arrows {
+            margin-bottom: 30px;
+            position: relative;
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .slider {
+        min-height: 290px;
+
+        .arrows {
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+    }
+}

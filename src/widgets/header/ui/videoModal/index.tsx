@@ -1,10 +1,9 @@
 'use client'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
 
-import { Loader } from '@/shared'
-import { useOutsideClick } from '@/shared/utils/hooks/useOutsideClick'
+import { Loader, useOutsideClick } from '@/shared'
 
 import styles from './styles.module.scss'
 
@@ -13,7 +12,7 @@ type Props = {
     closeFrame: VoidFunction
 }
 
-export const VideoModal = ({ isFrameOpen, closeFrame }: Props) => {
+export const VideoModal = memo(({ isFrameOpen, closeFrame }: Props) => {
     const [mounted, setMounted] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const frameRef = useRef<HTMLIFrameElement>(null)
@@ -44,7 +43,7 @@ export const VideoModal = ({ isFrameOpen, closeFrame }: Props) => {
                     ref={frameRef}
                     width='50%'
                     height='50%'
-                    src='https://www.youtube.com/embed/VXDTjM67d30?si=eSJJ40NTcQYm88VJ'
+                    src='https://www.youtube.com/embed/VXDTjM67d30?autoplay=1&si=eSJJ40NTcQYm88VJ'
                     title='YouTube video player'
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                     allowFullScreen
@@ -54,4 +53,4 @@ export const VideoModal = ({ isFrameOpen, closeFrame }: Props) => {
         </div>,
         document.body
     )
-}
+})

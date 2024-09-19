@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback } from 'react'
+import React, { memo, useCallback } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -14,7 +14,7 @@ type Props = {
     post: Post
 }
 
-export const SmallPost = ({ post: { title, created, author, id } }: Props) => {
+export const SmallPost = memo(({ post: { title, created, author, id } }: Props) => {
     const router = useRouter()
     const handlePostClick = useCallback(() => {
         router.push(`post/${id}`)
@@ -30,4 +30,4 @@ export const SmallPost = ({ post: { title, created, author, id } }: Props) => {
             </div>
         </div>
     )
-}
+})

@@ -1,2 +1,6 @@
 export { FeaturedPostDisplay } from './featuredPostDisplay'
 export { NavigateButton } from './navigateButton'
+export { Subscribe } from './subscribe'
+export { AuthorCard } from './authorCard'
+export { SmallPost } from './smallPost'
+export { Slider } from './slider'

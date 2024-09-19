@@ -13,4 +13,14 @@ export default {
     sassOptions: {
         additionalData: `@import "@/shared/styles/colors.scss"; @import "@/shared/styles/sizes.scss"; @import "@/shared/styles/mixins.scss";`,
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.pexels.com',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    },
 }

@@ -1,0 +1,20 @@
+.arrow {
+    background-color: $darkBlue;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    @include flex-center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        filter: brightness(2);
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .arrow {
+        width: 48px;
+        height: 48px;
+    }
+}

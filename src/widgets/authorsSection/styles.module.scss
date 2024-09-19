@@ -1,0 +1,33 @@
+.section {
+    padding: 128px 0 96px;
+
+    .wrapper {
+        margin-top: 48px;
+        @include flex-space-between;
+        align-items: stretch;
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .section {
+        padding: 128px 0 96px;
+
+        .wrapper {
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section {
+        padding: 90px 0;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section {
+        padding: 65px 0;
+    }
+}

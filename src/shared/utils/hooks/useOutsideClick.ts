@@ -1,3 +1,4 @@
+'use client'
 import { MutableRefObject, useEffect } from 'react'
 
 export const useOutsideClick = (ref: MutableRefObject<HTMLElement | null>, close: VoidFunction, className?: string) => {
