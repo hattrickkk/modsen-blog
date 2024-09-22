@@ -4,6 +4,7 @@ import { memo, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useTranslations } from 'next-intl'
 
 import { Button, InputWithError, NOTIFY_OPTIONS, Title, useValidateInput } from '@/shared'
 
@@ -30,14 +31,15 @@ export const Subscribe = memo(() => {
         },
         [reset]
     )
+    const t = useTranslations('footer')
 
     return (
         <div className={styles.subscribe}>
             <Toaster />
-            <Title value='Subscribe to our news letter to get latest updates and news' className={styles.title} />
+            <Title value={t('title')} className={styles.title} />
             <form className={styles.form} onSubmit={handleSubmit(handleFormSubmit)}>
-                <InputWithError placeholder='Enter Your Email' error={emailError} controllerProps={emailField} />
-                <Button type='submit'>Subscribe</Button>
+                <InputWithError placeholder={t('placeholder')} error={emailError} controllerProps={emailField} />
+                <Button type='submit'>{t('button')} </Button>
             </form>
         </div>
     )

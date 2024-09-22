@@ -4,6 +4,14 @@
     align-items: stretch;
     gap: 32px;
 
+    & > *:first-child {
+        flex: 1 1 auto;
+    }
+
+    & > *:last-child {
+        flex: 1 1 520px;
+    }
+
     .title {
         text-align: left;
     }

@@ -1,12 +1,13 @@
 'use client'
 
-import React, { memo, useRef } from 'react'
+import { memo, useRef } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
 
-import { Button, useOpenState, useOutsideClick } from '@/shared'
+import { Button, MENU_ITEMS, useOpenState, useOutsideClick } from '@/shared'
 
-import { HEADER_LINKS } from '../../constants/headerLinks'
+import { LanguageDropdown } from '../languageDropdown'
 import { VideoModal } from '../videoModal'
 
 import styles from './styles.module.scss'
@@ -17,19 +18,22 @@ export const Menu = memo(() => {
 
     const menuRef = useRef<HTMLDivElement>(null)
     useOutsideClick(menuRef, closeHeader, styles.burgerButton)
+    const t = useTranslations()
+    const locale = useLocale()
 
     return (
         <>
             <div className={clsx(styles.wrapper, isHeaderOpen && styles.open)} ref={menuRef}>
                 <ul className={styles.menu}>
-                    {HEADER_LINKS.map(({ path, name }) => (
+                    {MENU_ITEMS.map(({ path, name }) => (
                         <li key={path} className={styles.item}>
-                            <Link href={path}>{name}</Link>
+                            <Link href={`/${locale}${path}`}>{t(`menuItems.${name}`)}</Link>
                         </li>
                     ))}
+                    <LanguageDropdown />
                 </ul>
                 <Button onClick={openFrame} secondary>
-                    Video about us
+                    {t('header.video')}
                 </Button>
             </div>
             <button

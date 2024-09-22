@@ -1,0 +1,85 @@
+{
+    "header": {
+        "video": "Video About Us"
+    },
+    "menuItems": {
+        "home": "Home",
+        "blog": "Blog",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "privacyPolicy": "Privacy Policy"
+    },
+    "language": {
+        "en": "English",
+        "ru": "Russian"
+    },
+    "hero": {
+        "subtitle": "Posted on",
+        "title": "Step-by-step guide to choosing great font pairs",
+        "copyright": "By",
+        "month": "Май",
+        "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+    },
+    "button": {
+        "title": "Read More >"
+    },
+    "categories": {
+        "business": "Business",
+        "startup": "Startup",
+        "economy": "Economy",
+        "technology": "Technology",
+        "title": "Choose A Category"
+    },
+    "posts": {
+        "featuredPost": "Featured Post",
+        "allPosts": "All Posts",
+        "viewAll": "View All"
+    },
+    "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+    },
+    "about": {
+        "aboutUs": "About Us",
+        "ourMission": "Our Misson",
+        "title": "We are a community of content writers who share their learnings",
+        "subtitle": "Creating valuable content for creatives all around the world"
+    },
+    "ourStory": {
+        "subtitle": "Why we started",
+        "title": "It started out as a simple idea and evolved into our passion",
+        "button": "Discover our story"
+    },
+    "partners": {
+        "subtitle": "We are",
+        "title": "Featured in"
+    },
+    "authors": {
+        "title": "List of Authors"
+    },
+    "testimonials": {
+        "subtitle": "testimonials",
+        "title": "What people say about our blog"
+    },
+    "team": {
+        "button": "Join now",
+        "title": "Join our team to be a part of our story"
+    },
+    "footer": {
+        "button": "Subscribe",
+        "placeholder": "Enter Your Email",
+        "emailError": "Invalid email address",
+        "title": "Subscribe to our news letter to get latest updates and news",
+        "address": "Finstreet 118 2561 Fintown"
+    }
+}

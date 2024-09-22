@@ -1,20 +1,26 @@
+'use client'
+import { useTranslations } from 'next-intl'
+
 import { NavigateButton } from '@/features'
-import { commonStyles, paths, Title } from '@/shared'
+import { commonStyles, paths, ScrollAnimation, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
 export const TeamSection = () => {
+    const t = useTranslations('team')
     return (
-        <section className={styles.section}>
-            <div className={commonStyles.container}>
-                <div className={styles.wrapper}>
-                    <Title value='Join our team to be a part of our story' className={styles.title} />
-                    <p className={styles.text}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-                    </p>
-                    <NavigateButton pathName={paths.CONTACT_US} value='Join Now' />
+        <ScrollAnimation>
+            <section className={styles.section}>
+                <div className={commonStyles.container}>
+                    <div className={styles.wrapper}>
+                        <Title value={t('title')} className={styles.title} />
+                        <p className={styles.text}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                        </p>
+                        <NavigateButton pathName={paths.CONTACT_US} value={t('button')} />
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </ScrollAnimation>
     )
 }

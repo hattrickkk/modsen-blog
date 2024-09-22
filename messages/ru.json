@@ -1,0 +1,85 @@
+{
+    "header": {
+        "video": "Видео о нас"
+    },
+    "menuItems": {
+        "home": "Главная",
+        "blog": "Блог",
+        "about": "О нас",
+        "contact": "Контакты",
+        "privacyPolicy": "Политика конфиденциальности"
+    },
+    "language": {
+        "en": "Английский",
+        "ru": "Русский"
+    },
+    "hero": {
+        "subtitle": "Опубликовано в",
+        "title": "Пошаговое руководство по выбору отличных пар шрифтов",
+        "copyright": "Написано",
+        "month": "Май",
+        "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+    },
+    "button": {
+        "title": "Читать дальше >"
+    },
+    "categories": {
+        "business": "Бизнес",
+        "startup": "Стартап",
+        "economy": "Экономика",
+        "technology": "Технологии",
+        "title": "Выбери категорию"
+    },
+    "posts": {
+        "featuredPost": "Избранный пост",
+        "allPosts": "Все посты",
+        "viewAll": "Смотреть все"
+    },
+    "months": {
+        "january": "Январь",
+        "february": "Февраль",
+        "march": "Март",
+        "april": "Апрель",
+        "may": "Май",
+        "june": "Июнь",
+        "july": "Июль",
+        "august": "Август",
+        "september": "Сентрябрь",
+        "october": "Октябрь",
+        "november": "Ноябрь",
+        "december": "Декабрь"
+    },
+    "about": {
+        "aboutUs": "О Нас",
+        "ourMission": "Наша миссия",
+        "title": "Мы — сообщество авторов контента, которые делятся своими знаниями",
+        "subtitle": "Создание ценного контента для креативщиков по всему миру"
+    },
+    "ourStory": {
+        "subtitle": "Почему мы начали",
+        "title": "Все началось с простой идеи и превратилось в нашу страсть",
+        "button": "Откройте для себя нашу историю >"
+    },
+    "authors": {
+        "title": "Список Авторов"
+    },
+    "partners": {
+        "subtitle": "Мы",
+        "title": "Представлены в"
+    },
+    "testimonials": {
+        "subtitle": "Отзывы",
+        "title": "Что люди говорят о нашем блоге"
+    },
+    "team": {
+        "button": "Присоединиться сейчас",
+        "title": "Присоединяйтесь к нашей команде, чтобы стать частью нашей истории"
+    },
+    "footer": {
+        "button": "Подписаться",
+        "placeholder": "Введите Ваш Email",
+        "emailError": "Неверный email адрес",
+        "title": "Подпишитесь на нашу рассылку новостей, чтобы получать последние обновления и новости",
+        "address": "Финстрит 118 2561 Финтаун"
+    }
+}

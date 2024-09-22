@@ -1,8 +1,8 @@
 import { paths } from '../index'
 
 export const MENU_ITEMS = [
-    { name: 'Home', path: '/' },
-    { name: 'Blog', path: paths.BLOG },
-    { name: 'About Us', path: paths.ABOUT },
-    { name: 'Contact Us', path: paths.CONTACT_US },
+    { name: 'home', path: '/' },
+    { name: 'blog', path: paths.BLOG },
+    { name: 'about', path: paths.ABOUT },
+    { name: 'contact', path: paths.CONTACT_US },
 ]

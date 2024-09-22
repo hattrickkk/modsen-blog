@@ -1,8 +1,11 @@
+import { useTranslations } from 'next-intl'
+
 import { MONTHS } from '@/shared'
 
-export const formateDate = (date: Date) => {
+export const useFormateDate = (date: Date) => {
+    const t = useTranslations('months')
     const month = MONTHS[date.getMonth()]
     const day = date.getDate()
     const year = date.getFullYear()
-    return `${month} ${day}, ${year}`
+    return `${t(month)} ${day}, ${year}`
 }
