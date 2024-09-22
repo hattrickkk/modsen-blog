@@ -5,7 +5,7 @@
     color: $white;
     background:
         radial-gradient(circle, rgba($black, 0.6), rgba($black, 0.6)),
-        url('./hero.png') center center / cover no-repeat;
+        url('/hero.png') center center / cover no-repeat;
 
     & > * {
         width: 100%;

@@ -9,3 +9,11 @@ export const useFormateDate = (date: Date) => {
     const year = date.getFullYear()
     return `${t(month)} ${day}, ${year}`
 }
+
+export const fetchPosts = async () => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts`)
+    if (!response.ok) {
+        throw new Error('Response data error')
+    }
+    return response.json()
+}

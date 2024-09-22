@@ -1,0 +1,22 @@
+{
+    "posts": [
+        {
+            "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
+            "id": "1",
+            "title": "Design tips for designers that cover everything you need",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            "author": "John Doe",
+            "category": "business",
+            "image": "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
+            "id": "2",
+            "title": "How to build rapport with your web design clients",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            "author": "John Doe",
+            "category": "startup",
+            "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+    ]
+}
