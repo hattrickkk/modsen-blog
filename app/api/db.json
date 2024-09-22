@@ -14,9 +14,45 @@
             "id": "2",
             "title": "How to build rapport with your web design clients",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "John Doe",
+            "author": "Floyd Miles",
             "category": "startup",
             "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
+            "id": "3",
+            "title": "How to build rapport with your web design clients",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            "author": "Dianne Russell",
+            "category": "startup",
+            "image": "https://images.pexels.com/photos/3183173/pexels-photo-3183173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
+            "id": "4",
+            "title": "Design tips for designers that cover everything you need",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            "author": "John Doe",
+            "category": "business",
+            "image": "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
+            "id": "5",
+            "title": "How to build rapport with your web design clients",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            "author": "Floyd Miles",
+            "category": "startup",
+            "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        },
+        {
+            "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
+            "id": "6",
+            "title": "Logo design trends to avoid in 2022",
+            "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+            "author": "Dianne Russell",
+            "category": "startup",
+            "image": "https://images.pexels.com/photos/3183173/pexels-photo-3183173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         }
     ]
 }

@@ -18,6 +18,30 @@
             margin-bottom: 64px;
         }
     }
+
+    .arrows {
+        @include flex-center;
+        gap: 25px;
+    }
+
+    .arrow {
+        background-color: transparent;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 40px;
+        color: $darkBlue;
+
+        &.disable {
+            color: $gray;
+            pointer-events: none;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section .arrow {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: $PHONE) {
@@ -36,6 +60,10 @@
             & > *:not(:last-child) {
                 margin-bottom: 70px;
             }
+        }
+
+        .arrow {
+            font-size: 20px;
         }
     }
 }

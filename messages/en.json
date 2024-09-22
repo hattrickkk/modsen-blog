@@ -81,5 +81,9 @@
         "emailError": "Invalid email address",
         "title": "Subscribe to our news letter to get latest updates and news",
         "address": "Finstreet 118 2561 Fintown"
+    },
+    "arrows": {
+        "next": "Next",
+        "prev": "Prev"
     }
 }
