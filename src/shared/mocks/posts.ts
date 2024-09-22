@@ -7,6 +7,7 @@ export const POST = {
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
     author: 'John Doe',
     category: Category.BUSINESS,
+    image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
 }
 
 export const POSTS_ARR = Array(4)

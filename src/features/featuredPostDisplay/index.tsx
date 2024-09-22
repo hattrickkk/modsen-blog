@@ -23,7 +23,7 @@ export const FeaturedPostDisplay = ({ post: { id, text, title, created, author, 
         <div className={styles.post}>
             <div className={styles.wrapper}>
                 <div className={styles.imageWrapper}>
-                    <Image src={image ?? postImage} alt='post-photo' />
+                    <Image src={image ?? postImage} width={670} height={350} alt='post-photo' />
                 </div>
                 <p className={styles.copyright}>
                     {t('copyright')} <Link href={'/'}>{author}</Link> | {date}

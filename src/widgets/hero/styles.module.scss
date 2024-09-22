@@ -1,105 +1,27 @@
 .hero {
     height: 720px;
-    position: relative;
     padding-top: 80px;
+    @include flex-center;
+    color: $white;
     background:
         radial-gradient(circle, rgba($black, 0.6), rgba($black, 0.6)),
         url('./hero.png') center center / cover no-repeat;
-    @include flex-center;
 
-    .wrapper {
-        flex: 1 1 auto;
-        color: $white;
-
-        .subtitle {
-            font-weight: 500;
-            line-height: 20px;
-            letter-spacing: 0.19em;
-            text-transform: uppercase;
-            margin-bottom: 24px;
-
-            span {
-                font-weight: 900;
-            }
-        }
-
-        .title {
-            font-weight: 700;
-            font-size: 56px;
-            line-height: 64px;
-            letter-spacing: -0.04em;
-            margin-bottom: 24px;
-            max-width: 800px;
-        }
-
-        .copyright {
-            margin-bottom: 16px;
-
-            a {
-                color: $yellow;
-                transition: all ease 0.3s;
-
-                &:hover {
-                    color: $darkYellow;
-                }
-            }
-        }
-
-        .text {
-            margin-bottom: 48px;
-            max-width: 600px;
-        }
+    & > * {
+        width: 100%;
     }
 }
 
 @media screen and (max-width: $LARGE_TABLET) {
     .hero {
-        padding: 80px 0 30px;
+        padding: 90px 0 30px;
         height: 520px;
-
-        .wrapper {
-            .title {
-                font-weight: 700;
-                font-size: 48px;
-                line-height: 52px;
-            }
-
-            .text {
-                margin-bottom: 30px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: $SMALL_TABLET) {
-    .hero {
-        .wrapper {
-            .subtitle,
-            .text,
-            .copyright {
-                font-size: 14px;
-                margin-bottom: 15px;
-            }
-
-            .title {
-                font-weight: 700;
-                font-size: 34px;
-                line-height: 42px;
-            }
-        }
     }
 }
 
 @media screen and (max-width: $PHONE) {
     .hero {
-        padding: 90px 0 10px;
-        height: 540px;
-
-        .wrapper {
-            .title {
-                font-size: 28px;
-                line-height: 36px;
-            }
-        }
+        padding-top: 100px;
+        height: auto;
     }
 }

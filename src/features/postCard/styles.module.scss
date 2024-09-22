@@ -1,0 +1,98 @@
+.card {
+    @include flex-space-between;
+    gap: 32px;
+
+    &.column {
+        flex-direction: column;
+    }
+
+    .imageWrapper {
+        flex: 1 0 490px;
+
+        img {
+            @include image;
+        }
+    }
+
+    .info {
+        .subtitle {
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0.19em;
+            text-transform: uppercase;
+            color: $purple;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            margin-bottom: 16px;
+            text-align: left;
+            max-height: 145px;
+            overflow: hidden;
+        }
+
+        .text {
+            max-height: 110px;
+            overflow: hidden;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .card {
+        .imageWrapper {
+            flex: 1 0 300px;
+        }
+
+        .info {
+            .subtitle {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 30px;
+                max-height: 80px;
+                line-height: 38px;
+            }
+
+            .text {
+                max-height: 55px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .card {
+        flex-direction: column;
+        gap: 40px;
+
+        .imageWrapper {
+            width: 100%;
+        }
+
+        .info {
+            .title,
+            .text {
+                max-height: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .card {
+        gap: 30px;
+
+        .imageWrapper {
+            max-height: 200px;
+        }
+
+        .info {
+            .title,
+            .text {
+                max-height: none;
+            }
+        }
+    }
+}

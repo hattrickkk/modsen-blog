@@ -1,0 +1,86 @@
+.wrapper {
+    width: 100%;
+
+    .subtitle {
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.19em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+
+        span {
+            font-weight: 900;
+        }
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 64px;
+        letter-spacing: -0.04em;
+        margin-bottom: 24px;
+        max-width: 800px;
+    }
+
+    .copyright {
+        margin-bottom: 16px;
+
+        a {
+            color: $yellow;
+            transition: all ease 0.3s;
+
+            &:hover {
+                color: $darkYellow;
+            }
+
+            &.blogLink {
+                color: $purple;
+            }
+        }
+    }
+
+    .text {
+        margin-bottom: 48px;
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper {
+        .title {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 52px;
+        }
+
+        .text {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .wrapper {
+        .subtitle,
+        .text,
+        .copyright {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 42px;
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper {
+        .title {
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+}
