@@ -37,7 +37,7 @@ export const PostCard = ({ post: { title, image, text, category, authorId, creat
             <div className={styles.info}>
                 {inColumn ? (
                     <p className={styles.copyright}>
-                        {t('hero.copyright')} <Link href={`/${locale}/${authorId}`}>{author.name}</Link> | {date}
+                        {t('hero.copyright')} <Link href={`/${locale}/author/${authorId}`}>{author.name}</Link> | {date}
                     </p>
                 ) : (
                     <h3 className={styles.subtitle}>{t(`categories.${category}`)}</h3>
