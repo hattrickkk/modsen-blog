@@ -27,7 +27,9 @@ export const Menu = memo(() => {
                 <ul className={styles.menu}>
                     {MENU_ITEMS.map(({ path, name }) => (
                         <li key={path} className={styles.item}>
-                            <Link href={`/${locale}${path}`}>{t(`menuItems.${name}`)}</Link>
+                            <Link href={`/${locale}${path}`} onClick={closeHeader}>
+                                {t(`menuItems.${name}`)}
+                            </Link>
                         </li>
                     ))}
                     <LanguageDropdown />

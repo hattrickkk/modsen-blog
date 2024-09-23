@@ -5,8 +5,8 @@ import { getMessages } from 'next-intl/server'
 import { inter } from '@/shared'
 import { Footer, Header } from '@/widgets'
 
-import './styles/nullStyle.scss'
-import styles from './styles/global.module.scss'
+import '../styles/nullStyle.scss'
+import styles from '../styles/global.module.scss'
 
 const RootLayout = async ({
     children,
@@ -15,19 +15,20 @@ const RootLayout = async ({
     children: ReactNode
     params: { locale: 'en' | 'ru' }
 }) => {
-    const messages = await getMessages()
+    const messages = await getMessages({ locale })
+
     return (
-        <html lang={locale}>
-            <body className={inter.className}>
-                <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
+            <html lang={locale}>
+                <body className={inter.className}>
                     <div className={styles.wrapper}>
                         <Header />
                         <main className={styles.main}>{children}</main>
                         <Footer />
                     </div>
-                </NextIntlClientProvider>
-            </body>
-        </html>
+                </body>
+            </html>
+        </NextIntlClientProvider>
     )
 }
 export default RootLayout
