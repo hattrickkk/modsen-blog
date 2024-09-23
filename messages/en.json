@@ -85,5 +85,9 @@
     "arrows": {
         "next": "Next",
         "prev": "Prev"
+    },
+    "singlePost": {
+        "ending": "th",
+        "posted": "Posted on"
     }
 }

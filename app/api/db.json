@@ -1,58 +1,106 @@
 {
+    "socialsArray": [
+        "https://ru-ru.facebook.com",
+        "https://x.com",
+        "https://www.instagram.com",
+        "https://www.linkedin.com"
+    ],
     "posts": [
         {
             "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
             "id": "1",
+            "authorId": "1",
             "title": "Design tips for designers that cover everything you need",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "John Doe",
             "category": "business",
             "image": "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
             "id": "2",
+            "authorId": "2",
             "title": "How to build rapport with your web design clients",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "Floyd Miles",
             "category": "startup",
             "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
             "id": "3",
+            "authorId": "3",
             "title": "How to build rapport with your web design clients",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "Dianne Russell",
             "category": "startup",
             "image": "https://images.pexels.com/photos/3183173/pexels-photo-3183173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
             "id": "4",
+            "authorId": "1",
             "title": "Design tips for designers that cover everything you need",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "John Doe",
             "category": "business",
             "image": "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
             "id": "5",
+            "authorId": "1",
             "title": "How to build rapport with your web design clients",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "Floyd Miles",
             "category": "startup",
             "image": "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         },
         {
             "created": "Sun Sep 22 2024 20:11:56 GMT+0300 (Москва, стандартное время)",
             "id": "6",
+            "authorId": "1",
             "title": "Logo design trends to avoid in 2022",
             "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
-            "author": "Dianne Russell",
             "category": "startup",
             "image": "https://images.pexels.com/photos/3183173/pexels-photo-3183173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
+    ],
+    "authors": [
+        {
+            "id": "1",
+            "name": "Floyd Miles",
+            "image": "https://images.pexels.com/photos/7562313/pexels-photo-7562313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.",
+            "posts": [1, 4, 5, 6],
+            "socials": "socialsArray"
+        },
+        {
+            "id": "2",
+            "name": "Dianne Russell",
+            "image": "https://images.pexels.com/photos/2180890/pexels-photo-2180890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.",
+            "posts": [2],
+            "socials": "socialsArray"
+        },
+        {
+            "id": "3",
+            "name": "Jenny Wilson",
+            "image": "https://images.pexels.com/photos/5704849/pexels-photo-5704849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.",
+            "posts": [3],
+            "socials": "socialsArray"
+        },
+        {
+            "id": "4",
+            "name": "Leslie Alexander",
+            "image": "https://images.pexels.com/photos/6205509/pexels-photo-6205509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.",
+            "posts": [],
+            "socials": "socialsArray"
+        },
+        {
+            "id": "5",
+            "name": "Andrew Jonhson",
+            "image": "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non blandit massa enim nec. Scelerisque viverra mauris in aliquam sem. At risus viverra adipiscing at in tellus.",
+            "posts": [],
+            "socials": "socialsArray"
         }
     ]
 }

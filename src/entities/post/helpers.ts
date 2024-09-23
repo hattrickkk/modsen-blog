@@ -10,6 +10,15 @@ export const useFormateDate = (date: Date) => {
     return `${t(month)} ${day}, ${year}`
 }
 
+export const useFormateDateForSinglePost = (d: string) => {
+    const date = new Date(d)
+    const t = useTranslations()
+    const month = MONTHS[date.getMonth()]
+    const day = date.getDate()
+    const year = date.getFullYear()
+    return `${day}${t('singlePost.ending')} ${t(`months.${month}`)} ${year}`
+}
+
 export const fetchPosts = async (start: number, count: number) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts?_start=${start}&_end=${start + count}`)
     if (!response.ok) {
@@ -25,4 +34,12 @@ export const getPostsCount = async () => {
     }
     const totalCount = (await response.json()).length
     return totalCount
+}
+
+export const getPostsById = async (id: string) => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/posts/${id}`)
+    if (!response.ok) {
+        throw new Error('Response data error')
+    }
+    return response.json()
 }

@@ -22,7 +22,7 @@ const RootLayout = async ({
                 <NextIntlClientProvider messages={messages}>
                     <div className={styles.wrapper}>
                         <Header />
-                        <main>{children}</main>
+                        <main className={styles.main}>{children}</main>
                         <Footer />
                     </div>
                 </NextIntlClientProvider>

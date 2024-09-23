@@ -5,6 +5,6 @@ const appRouter = jsonServer.router('./db.json')
 const middlewares = jsonServer.defaults()
 
 server.use(middlewares)
-server.use('/api', appRouter)
+server.use(appRouter)
 
 export default server

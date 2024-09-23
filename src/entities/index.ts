@@ -1,4 +1,5 @@
 export type { Post } from './post/model'
-export { useFormateDate, fetchPosts } from './post/helpers'
+export { useFormateDate, useFormateDateForSinglePost, fetchPosts, getPostsCount, getPostsById } from './post/helpers'
 export type { Author } from './authors/model'
 export type { Testimonial } from './testimonials/model'
+export { fetchAuthors, getAuthorById } from './authors/helpers'

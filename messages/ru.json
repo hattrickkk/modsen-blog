@@ -85,5 +85,9 @@
     "arrows": {
         "next": "Вперед",
         "prev": "Назад"
+    },
+    "singlePost": {
+        "ending": "го",
+        "posted": "Опубликовано"
     }
 }
