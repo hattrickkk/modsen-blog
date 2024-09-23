@@ -36,7 +36,7 @@ export const SinglePost = ({ post: { authorId, title, image, created, category }
                     <div className={styles.top}>
                         <div className={styles.author}>
                             <div className={styles.avatarWrapper}>
-                                <Image src={author && author.image} alt='post-photo' width={50} height={50} />
+                                {author.image && <Image src={author.image} alt='avatar-photo' width={50} height={50} />}
                             </div>
                             <div>
                                 <Link

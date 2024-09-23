@@ -24,6 +24,10 @@ export const AuthorCard = memo(({ author: { image, name, socials, id } }: Props)
         [router]
     )
 
+    const handleSocialClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.stopPropagation()
+    }, [])
+
     return (
         <div className={styles.card} onClick={handleCardClick(id)}>
             <div className={styles.imageWrapper}>
@@ -33,7 +37,7 @@ export const AuthorCard = memo(({ author: { image, name, socials, id } }: Props)
             <p className={styles.text}>Content Writer @Company</p>
             <div className={styles.socials}>
                 {SOCIALS.map(({ Icon }, i) => (
-                    <a href={socials && socials[i]} key={i}>
+                    <a href={socials[i]} key={i} onClick={handleSocialClick}>
                         <Icon />
                     </a>
                 ))}

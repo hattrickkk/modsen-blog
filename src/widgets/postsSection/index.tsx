@@ -1,12 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-import { getPostsById, Post } from '@/entities'
+import { fetchPosts, Post } from '@/entities'
 import { FeaturedPostDisplay } from '@/features'
-import { AnimationTypes, commonStyles, Title } from '@/shared'
-import { ScrollAnimation } from '@/shared'
+import { AnimationTypes, commonStyles, ScrollAnimation, Title } from '@/shared'
 
 import { AllPosts } from '../allPosts'
 
@@ -14,12 +13,15 @@ import styles from './styles.module.scss'
 
 export const PostsSection = () => {
     const t = useTranslations('posts')
-    const [post, setPost] = useState<Post>({} as Post)
+
+    const [posts, setPosts] = useState<Post[]>([])
     useEffect(() => {
-        getPostsById('1')
-            .then(data => setPost(data))
+        fetchPosts(0, 5)
+            .then(data => setPosts(data))
             .catch(err => console.error(err))
     }, [])
+
+    const otherPosts = useMemo(() => posts.slice(1), [posts])
 
     return (
         <div className={commonStyles.container}>
@@ -27,10 +29,10 @@ export const PostsSection = () => {
                 <ScrollAnimation type={AnimationTypes.toRight}>
                     <div>
                         <Title value={t('featuredPost')} className={styles.title} />
-                        <FeaturedPostDisplay post={post} />
+                        {posts[0] && <FeaturedPostDisplay post={posts[0]} />}
                     </div>
                 </ScrollAnimation>
-                <AllPosts />
+                <AllPosts posts={otherPosts} />
             </section>
         </div>
     )
