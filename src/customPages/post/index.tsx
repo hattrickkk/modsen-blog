@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { getPostsById, Post } from '@/entities'
 import { SinglePost } from '@/features'
 import { Loader } from '@/shared'
+import { ReadNext, TeamSection } from '@/widgets'
 
 import styles from './styles.module.scss'
 
@@ -29,5 +30,11 @@ export const PostPage = ({ params: { id } }: Props) => {
             </div>
         )
 
-    return <SinglePost post={post} />
+    return (
+        <>
+            <SinglePost post={post} />
+            <ReadNext />
+            <TeamSection />
+        </>
+    )
 }

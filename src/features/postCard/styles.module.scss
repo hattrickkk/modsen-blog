@@ -2,10 +2,6 @@
     @include flex-space-between;
     gap: 32px;
 
-    &.column {
-        flex-direction: column;
-    }
-
     .imageWrapper {
         flex: 1 0 490px;
 
@@ -34,6 +30,31 @@
         .text {
             max-height: 110px;
             overflow: hidden;
+        }
+    }
+
+    &.column {
+        flex-direction: column;
+
+        .imageWrapper {
+            flex: 1 0 280px;
+            width: 100%;
+        }
+
+        .info {
+            .title {
+                max-height: 120px;
+                line-height: 40px;
+                font-size: 28px;
+            }
+        }
+    }
+
+    .copyright {
+        margin-bottom: 16px;
+
+        a {
+            color: $purple;
         }
     }
 }
@@ -75,6 +96,25 @@
             .title,
             .text {
                 max-height: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .card.column {
+        gap: 20px;
+
+        .info {
+            .copyright {
+                margin-bottom: 10px;
+            }
+
+            .title {
+                font-size: 24px;
+                max-height: 85px;
+                line-height: 30px;
+                margin-bottom: 10px;
             }
         }
     }

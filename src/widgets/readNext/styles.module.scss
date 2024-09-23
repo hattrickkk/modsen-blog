@@ -1,0 +1,46 @@
+.posts {
+    @include flex-space-between;
+    align-items: stretch;
+    gap: 32px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba($gray, 0.3);
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 64px;
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .posts {
+        flex-wrap: wrap;
+
+        & > *:nth-child(1),
+        & > *:nth-child(2) {
+            flex: 0 1 calc(50% - 16px);
+        }
+
+        & > *:last-child {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .posts {
+        & > *:nth-child(1),
+        & > *:nth-child(2) {
+            flex: 1 1 100%;
+        }
+
+        & > *:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        padding-bottom: 34px;
+    }
+
+    .title {
+        margin-bottom: 30px;
+    }
+}

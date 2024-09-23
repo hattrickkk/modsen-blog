@@ -88,6 +88,7 @@
     },
     "singlePost": {
         "ending": "th",
-        "posted": "Posted on"
+        "posted": "Posted on",
+        "title": "What to read next"
     }
 }
