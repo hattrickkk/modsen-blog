@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { Post } from '@/entities'
 import { SmallPost } from '@/features'
@@ -13,13 +13,14 @@ type Props = {
 
 export const AllPosts = ({ posts }: Props) => {
     const t = useTranslations('posts')
+    const locale = useLocale()
 
     return (
         <ScrollAnimation type={AnimationTypes.toLeft}>
             <div className={styles.wrapper}>
                 <header className={styles.header}>
                     <Title value={t('allPosts')} />
-                    <Link href={paths.BLOG}>{t('viewAll')}</Link>
+                    <Link href={`/${locale}/${paths.BLOG}`}>{t('viewAll')}</Link>
                 </header>
                 <div className={styles.posts}>
                     {posts.map((post, i) => (

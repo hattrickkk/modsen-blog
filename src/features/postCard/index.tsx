@@ -16,7 +16,10 @@ type Props = {
     inColumn?: boolean
 }
 
-export const PostCard = ({ post: { title, image, text, category, authorId, created }, inColumn = false }: Props) => {
+export const PostCard = ({
+    post: { id, title, image, text, category, authorId, created },
+    inColumn = false,
+}: Props) => {
     const t = useTranslations()
     const locale = useLocale()
     const date = useFormateDate(created)
@@ -42,7 +45,9 @@ export const PostCard = ({ post: { title, image, text, category, authorId, creat
                 ) : (
                     <h3 className={styles.subtitle}>{t(`categories.${category}`)}</h3>
                 )}
-                <Title value={title} className={styles.title} />
+                <Link href={`/${locale}/post/${id}`}>
+                    <Title value={title} className={styles.title} />
+                </Link>
                 <p className={styles.text}>{text}</p>
             </div>
         </div>

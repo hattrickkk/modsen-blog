@@ -4,6 +4,8 @@
 
     .imageWrapper {
         flex: 1 0 490px;
+        height: 320px;
+        overflow: hidden;
 
         img {
             @include image;
@@ -63,6 +65,7 @@
     .card {
         .imageWrapper {
             flex: 1 0 300px;
+            height: 200px;
         }
 
         .info {
@@ -90,6 +93,7 @@
 
         .imageWrapper {
             width: 100%;
+            height: auto;
         }
 
         .info {

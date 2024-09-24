@@ -4,30 +4,27 @@ import { useCallback, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { fetchPosts, getPostsCount, Post } from '@/entities'
+import { fetchPosts, getPagesCount, getPostsCount, Post } from '@/entities'
 import { PostCard } from '@/features'
-import { AnimationTypes, commonStyles, Loader, sen } from '@/shared'
-import { ScrollAnimation } from '@/shared'
+import { AnimationTypes, commonStyles, Loader, Pagination, POSTS_PER_PAGE, ScrollAnimation, sen } from '@/shared'
 
 import styles from './styles.module.scss'
-
-const POSTS_PER_PAGE = 5
 
 export const BlogSection = () => {
     const locale = useLocale()
     const [posts, setPosts] = useState<Post[]>([])
     const [postsCount, setPostsCount] = useState(0)
-    const [start, setStart] = useState(0)
+    const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
     const t = useTranslations('')
 
     useEffect(() => {
         setLoading(true)
-        fetchPosts(start, POSTS_PER_PAGE)
+        fetchPosts({ page, limit: POSTS_PER_PAGE })
             .then(data => setPosts(data))
             .catch(err => console.error(err))
             .finally(() => setLoading(false))
-    }, [locale, start])
+    }, [locale, page])
 
     useEffect(() => {
         getPostsCount()
@@ -36,14 +33,19 @@ export const BlogSection = () => {
     }, [])
 
     const handleNextArrowClick = useCallback(() => {
-        setStart(prev => prev + POSTS_PER_PAGE)
+        setPage(prevPage => prevPage + 1)
     }, [])
 
     const handlePrevArrowClick = useCallback(() => {
-        setStart(prev => prev - POSTS_PER_PAGE)
+        setPage(prevPage => prevPage - 1)
     }, [])
 
-    if (loading) return <Loader />
+    if (loading)
+        return (
+            <div className={styles.wrapper}>
+                <Loader />
+            </div>
+        )
 
     return (
         <section className={styles.section}>
@@ -59,26 +61,14 @@ export const BlogSection = () => {
                     ))}
                 </div>
                 {posts.length > 0 && (
-                    <ScrollAnimation type={AnimationTypes.toRight}>
-                        <div className={styles.arrows}>
-                            <button
-                                className={clsx(sen.className, styles.arrow, start <= 0 && styles.disable)}
-                                onClick={handlePrevArrowClick}
-                            >
-                                &lt; {t('arrows.prev')}
-                            </button>
-                            <button
-                                className={clsx(
-                                    sen.className,
-                                    styles.arrow,
-                                    postsCount <= POSTS_PER_PAGE + start && styles.disable
-                                )}
-                                onClick={handleNextArrowClick}
-                            >
-                                {t('arrows.next')} &gt;
-                            </button>
-                        </div>
-                    </ScrollAnimation>
+                    <Pagination
+                        handlePrevArrowClick={handlePrevArrowClick}
+                        handleNextArrowClick={handleNextArrowClick}
+                        prevDisableCondition={page <= 1}
+                        nextDisableCondition={
+                            page === getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: postsCount })
+                        }
+                    />
                 )}
             </div>
         </section>

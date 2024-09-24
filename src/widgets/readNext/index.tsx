@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 export const ReadNext = () => {
     const [posts, setPosts] = useState<Post[]>([])
     useEffect(() => {
-        fetchPosts(0, 3)
+        fetchPosts({ page: 1, limit: 3 })
             .then(data => setPosts(data))
             .catch(err => console.error(err))
     }, [])

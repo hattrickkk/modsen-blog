@@ -13,7 +13,7 @@ export const AuthorsSection = memo(() => {
     const [authors, setAuthors] = useState<Author[]>([])
 
     useEffect(() => {
-        fetchAuthors(0, 4)
+        fetchAuthors({ page: 1, limit: 4 })
             .then(res => setAuthors(res))
             .catch(err => console.error(err))
     }, [])
