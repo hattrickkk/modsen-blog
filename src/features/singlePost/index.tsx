@@ -28,6 +28,7 @@ export const SinglePost = ({ post: { authorId, title, image, created, category }
     }, [authorId])
 
     const categoryItem = CATEGORY_ITEMS.find(el => el.title == category)
+    const formatedDate = useFormateDateForSinglePost(created)
 
     return (
         <section className={styles.section}>
@@ -45,9 +46,7 @@ export const SinglePost = ({ post: { authorId, title, image, created, category }
                                 >
                                     {author.name}
                                 </Link>
-                                <p
-                                    className={styles.date}
-                                >{`${t('singlePost.posted')} ${useFormateDateForSinglePost(created)}`}</p>
+                                <p className={styles.date}>{`${t('singlePost.posted')} ${formatedDate}`}</p>
                             </div>
                         </div>
                         <h1 className={clsx(sen.className, styles.title)}>{title}</h1>

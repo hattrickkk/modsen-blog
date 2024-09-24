@@ -5,7 +5,7 @@ export const fetchAuthors = async ({ page, limit }: FetchParams) => {
     if (!response.ok) {
         throw new Error('Response data error')
     }
-    return response.json()
+    return await response.json()
 }
 
 export const getAuthorById = async (id: string) => {
@@ -13,5 +13,5 @@ export const getAuthorById = async (id: string) => {
     if (!response.ok) {
         throw new Error('Response data error')
     }
-    return response.json()
+    return await response.json()
 }

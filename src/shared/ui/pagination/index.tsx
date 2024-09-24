@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
-import { AnimationTypes, sen } from '@/shared'
+import { AnimationTypes, NEXT_ARROW, PREV_ARROW, sen } from '@/shared'
 
 import { ScrollAnimation } from '../scrollAnimation'
 
@@ -28,13 +28,13 @@ export const Pagination = ({
                     className={clsx(sen.className, styles.arrow, prevDisableCondition && styles.disable)}
                     onClick={handlePrevArrowClick}
                 >
-                    &lt; {t('prev')}
+                    {PREV_ARROW} {t('prev')}
                 </button>
                 <button
                     className={clsx(sen.className, styles.arrow, nextDisableCondition && styles.disable)}
                     onClick={handleNextArrowClick}
                 >
-                    {t('next')} &gt;
+                    {t('next')} {NEXT_ARROW}
                 </button>
             </div>
         </ScrollAnimation>

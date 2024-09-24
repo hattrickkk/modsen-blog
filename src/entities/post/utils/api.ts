@@ -5,7 +5,7 @@ export const fetchPosts = async ({ page, limit }: FetchParams) => {
     if (!response.ok) {
         throw new Error('Response data error')
     }
-    return response.json()
+    return await response.json()
 }
 
 export const getPostsCount = async () => {
@@ -13,8 +13,7 @@ export const getPostsCount = async () => {
     if (!response.ok) {
         throw new Error('Response data error')
     }
-    const totalCount = (await response.json()).length
-    return totalCount
+    return (await response.json()).length
 }
 
 export const getPostsById = async (id: string) => {
@@ -22,5 +21,5 @@ export const getPostsById = async (id: string) => {
     if (!response.ok) {
         throw new Error('Response data error')
     }
-    return response.json()
+    return await response.json()
 }
