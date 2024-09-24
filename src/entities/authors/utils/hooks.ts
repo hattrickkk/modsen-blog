@@ -17,10 +17,12 @@ export const useFetchAuthorById = (authorId: string) => {
 
 export const useFetchAuthors = (params: FetchParams) => {
     const [authors, setAuthors] = useState<Author[]>([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
         fetchAuthors(params)
             .then(res => setAuthors(res))
             .catch(err => console.error(err))
+            .finally(() => setLoading(false))
     }, [params])
-    return authors
+    return { authors, loading }
 }

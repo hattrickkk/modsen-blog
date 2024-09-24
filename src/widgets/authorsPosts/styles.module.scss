@@ -1,0 +1,31 @@
+.section {
+    @include flex-space-between;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 128px 0;
+
+    .title {
+        text-align: left;
+        margin-bottom: 64px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+        color: $darkBlue;
+    }
+
+    .posts {
+        @include flex-space-between;
+        flex-direction: column;
+        flex: 1 1 auto;
+
+        & > * {
+            margin-bottom: 64px;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section {
+        padding: 70px 0;
+    }
+}

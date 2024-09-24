@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-import { fetchPosts, getPostsById, getPostsCount, Post } from '@/entities'
+import { fetchPosts, getPostsArrByIds, getPostsById, getPostsCount, Post } from '@/entities'
 import { FetchParams, MONTHS } from '@/shared'
 
 export const useFormateDate = (d: string) => {
@@ -54,4 +54,14 @@ export const useFetchPostById = (id: string) => {
             .finally(() => setLoading(false))
     }, [id])
     return { post, loading }
+}
+
+export const useFetchPostsByIdsArr = (arr: number[]) => {
+    const [posts, setPosts] = useState<Post[]>([])
+    useEffect(() => {
+        getPostsArrByIds(arr)
+            .then(res => setPosts(res))
+            .catch(err => console.error(err))
+    }, [arr])
+    return posts
 }

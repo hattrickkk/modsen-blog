@@ -1,0 +1,141 @@
+.section {
+    background-color: $lightPurple;
+
+    .inner {
+        padding: 210px 0 128px;
+
+        .wrapper {
+            @include flex-space-between;
+            gap: 32px;
+
+            & > *:first-child {
+                flex: 1 0 250px;
+                align-self: stretch;
+                max-width: 250px;
+                // max-height: 285px;
+                overflow: hidden;
+            }
+        }
+
+        .imageWrapper img {
+            @include image;
+        }
+
+        .info {
+            & > *:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            .title {
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 64px;
+                letter-spacing: -0.04em;
+                color: $darkBlue;
+            }
+
+            .socials {
+                @include flex-center;
+                justify-content: flex-start;
+                gap: 16px;
+            }
+        }
+    }
+
+    .decor {
+        height: 23px;
+        display: flex;
+
+        .yellow,
+        .purple {
+            height: 100%;
+        }
+
+        .yellow {
+            background-color: $yellow;
+            flex: 1 1 auto;
+        }
+
+        .purple {
+            background-color: $purple;
+            flex: 0 1 270px;
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .section .inner {
+        .info {
+            .title {
+                font-size: 38px;
+                line-height: 46px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .section {
+        .inner {
+            padding: 150px 0 80px;
+
+            .wrapper {
+                flex-direction: column;
+                gap: 40px;
+
+                & > *:first-child {
+                    align-self: center;
+                    flex: 1 0 100%;
+                    max-width: 300px;
+                    max-height: 300px;
+                }
+            }
+
+            .info {
+                .title,
+                .text {
+                    text-align: center;
+                }
+
+                .socials {
+                    justify-content: center;
+                }
+            }
+        }
+
+        .decor {
+            height: 18px;
+
+            .purple {
+                flex: 0 1 210px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section {
+        .inner {
+            .info {
+                .title {
+                    font-size: 30px;
+                    line-height: 46px;
+                }
+            }
+
+            .imageWrapper {
+                max-width: 100%;
+                width: 100%;
+                max-height: 350px;
+            }
+        }
+
+        .decor {
+            height: 18px;
+
+            .purple {
+                flex: 0 1 120px;
+            }
+        }
+    }
+}

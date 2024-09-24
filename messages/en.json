@@ -90,5 +90,10 @@
         "ending": "th",
         "posted": "Posted on",
         "title": "What to read next"
+    },
+    "author": {
+        "title1": "Hey there, I’m",
+        "title2": "and welcome to my Blog",
+        "posts": "My Posts"
     }
 }
