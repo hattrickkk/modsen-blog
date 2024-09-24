@@ -1,11 +1,11 @@
 'use client'
-import { useEffect, useState } from 'react'
+
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Author, getAuthorById, type Post, useFormateDate } from '@/entities'
+import { type Post, useFetchAuthorById, useFormateDate } from '@/entities'
 import { sen } from '@/shared'
 
 import { NavigateButton } from '../navigateButton'
@@ -20,13 +20,7 @@ export const FeaturedPostDisplay = ({ post: { id, text, title, created, authorId
     const date = useFormateDate(created)
     const t = useTranslations('hero')
     const locale = useLocale()
-
-    const [author, setAuthor] = useState<Author>({} as Author)
-    useEffect(() => {
-        getAuthorById(authorId)
-            .then(data => setAuthor(data))
-            .catch(err => console.error(err))
-    }, [authorId])
+    const author = useFetchAuthorById(authorId)
 
     return (
         <div className={styles.post}>

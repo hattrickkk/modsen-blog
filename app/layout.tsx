@@ -1,8 +1,15 @@
 import { ReactNode } from 'react'
 
-const AppLayout = async ({ children }: { children: ReactNode }) => {
+import { Locale } from '@/shared'
+
+type Props = {
+    children: ReactNode
+    params: { locale: Locale }
+}
+
+const AppLayout = async ({ children, params: { locale } }: Props) => {
     return (
-        <html lang='en'>
+        <html lang={locale}>
             <body>{children}</body>
         </html>
     )

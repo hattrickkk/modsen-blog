@@ -1,7 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
 
-import { getPostsById, Post } from '@/entities'
+import { useFetchPostById } from '@/entities/post/utils/hooks'
 import { SinglePost } from '@/features'
 import { Loader } from '@/shared'
 import { ReadNext, TeamSection } from '@/widgets'
@@ -12,16 +11,7 @@ type Props = {
     params: { id: string }
 }
 export const PostPage = ({ params: { id } }: Props) => {
-    const [loading, setLoading] = useState(true)
-    const [post, setPost] = useState<Post>({} as Post)
-
-    useEffect(() => {
-        setLoading(true)
-        getPostsById(id)
-            .then(data => setPost(data))
-            .catch(err => console.error(err))
-            .finally(() => setLoading(false))
-    }, [id])
+    const { post, loading } = useFetchPostById(id)
 
     if (loading)
         return (

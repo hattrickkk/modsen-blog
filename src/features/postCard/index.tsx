@@ -1,12 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Author, getAuthorById, Post, useFormateDate } from '@/entities'
+import { Post, useFetchAuthorById, useFormateDate } from '@/entities'
 import { Title } from '@/shared'
 
 import styles from './styles.module.scss'
@@ -23,14 +22,7 @@ export const PostCard = ({
     const t = useTranslations()
     const locale = useLocale()
     const date = useFormateDate(created)
-
-    const [author, setAuthor] = useState<Author>({} as Author)
-
-    useEffect(() => {
-        getAuthorById(authorId)
-            .then(data => setAuthor(data))
-            .catch(err => console.error(err))
-    }, [authorId])
+    const author = useFetchAuthorById(authorId)
 
     return (
         <div className={clsx(styles.card, inColumn && styles.column)}>

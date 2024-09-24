@@ -1,3 +1,5 @@
+'use client'
+
 import { useCallback, useRef } from 'react'
 import clsx from 'clsx'
 import routing from 'i18n/routing'

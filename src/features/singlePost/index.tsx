@@ -1,12 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Author, getAuthorById, Post, useFormateDateForSinglePost } from '@/entities'
+import { Post, useFetchAuthorById, useFormateDateForSinglePost } from '@/entities'
 import { AnimationTypes, CATEGORY_ITEMS, commonStyles, ScrollAnimation, sen } from '@/shared'
 
 import { PostText } from './ui/postText'
@@ -17,16 +16,9 @@ type Props = {
     post: Post
 }
 export const SinglePost = ({ post: { authorId, title, image, created, category } }: Props) => {
-    const [author, setAuthor] = useState<Author>({} as Author)
     const locale = useLocale()
     const t = useTranslations()
-
-    useEffect(() => {
-        getAuthorById(authorId)
-            .then(data => setAuthor(data))
-            .catch(err => console.error(err))
-    }, [authorId])
-
+    const author = useFetchAuthorById(authorId)
     const categoryItem = CATEGORY_ITEMS.find(el => el.title == category)
     const formatedDate = useFormateDateForSinglePost(created)
 

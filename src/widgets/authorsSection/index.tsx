@@ -1,23 +1,16 @@
 'use client'
 
-import { memo, useEffect, useState } from 'react'
+import { memo } from 'react'
 import { useTranslations } from 'next-intl'
 
-import { Author, fetchAuthors } from '@/entities'
+import { useFetchAuthors } from '@/entities'
 import { AuthorCard } from '@/features'
 import { AnimationTypes, commonStyles, ScrollAnimation, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
 export const AuthorsSection = memo(() => {
-    const [authors, setAuthors] = useState<Author[]>([])
-
-    useEffect(() => {
-        fetchAuthors({ page: 1, limit: 4 })
-            .then(res => setAuthors(res))
-            .catch(err => console.error(err))
-    }, [])
-
+    const authors = useFetchAuthors({ page: 1, limit: 4 })
     const t = useTranslations('authors')
 
     return (
