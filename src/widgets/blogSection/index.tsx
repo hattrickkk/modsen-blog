@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { fetchPosts, getPagesCount, getPostsCount, Post } from '@/entities'
-import { PostCard } from '@/features'
+import { PostsContainer } from '@/features'
 import { AnimationTypes, commonStyles, Loader, Pagination, POSTS_PER_PAGE, ScrollAnimation, sen } from '@/shared'
 
 import styles from './styles.module.scss'
@@ -54,11 +54,7 @@ export const BlogSection = () => {
                     <h1 className={clsx(styles.title, sen.className)}>{t('posts.allPosts')}</h1>
                 </ScrollAnimation>
                 <div className={styles.posts}>
-                    {posts.map((post, i) => (
-                        <ScrollAnimation type={AnimationTypes.toLeft} delay={`0.${i}`} key={post.id}>
-                            <PostCard post={post} />
-                        </ScrollAnimation>
-                    ))}
+                    <PostsContainer posts={posts} />
                 </div>
                 {posts.length > 0 && (
                     <Pagination

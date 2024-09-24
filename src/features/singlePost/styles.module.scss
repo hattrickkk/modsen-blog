@@ -53,7 +53,7 @@
     }
 
     .imageWrapper {
-        max-height: 582px;
+        height: 582px;
         overflow: hidden;
         margin-bottom: 64px;
 
@@ -75,6 +75,11 @@
 
         .top {
             margin: 0 auto 35px;
+        }
+
+        .imageWrapper {
+            height: 300px;
+            margin-bottom: 30px;
         }
     }
 }

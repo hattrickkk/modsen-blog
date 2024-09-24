@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
 import { fetchPosts, Post } from '@/entities'
-import { PostCard } from '@/features'
-import { AnimationTypes, commonStyles, ScrollAnimation, Title } from '@/shared'
+import { PostsContainer } from '@/features'
+import { commonStyles, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
@@ -22,11 +22,7 @@ export const ReadNext = () => {
         <div className={commonStyles.container}>
             <Title value={t('title')} className={styles.title} />
             <div className={styles.posts}>
-                {posts.map((post, i) => (
-                    <ScrollAnimation type={AnimationTypes.toLeft} delay={`0.${i}`} key={post.id}>
-                        <PostCard post={post} inColumn />
-                    </ScrollAnimation>
-                ))}
+                <PostsContainer posts={posts} inColumn />
             </div>
         </div>
     )
