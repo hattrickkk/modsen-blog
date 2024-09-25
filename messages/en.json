@@ -90,5 +90,29 @@
         "ending": "th",
         "posted": "Posted on",
         "title": "What to read next"
+    },
+    "author": {
+        "title1": "Hey there, I’m",
+        "title2": "and welcome to my Blog",
+        "posts": "My Posts"
+    },
+    "ourVision": {
+        "ourMission": {
+            "title1": "Creating valuable content for creatives all around the world",
+            "subtitle1": "our mission",
+            "title2": "A platform that empowers individuals to improve",
+            "subtitle2": "our vision"
+        },
+        "overview": {
+            "blogs": "Blogs Published",
+            "views": "Views on Finsweet",
+            "users": "Total active Users"
+        }
+    },
+    "knowAboutTeam": {
+        "title1": "Our team of creatives",
+        "subtitle1": "Our team of creatives brings innovative ideas to life, crafting unique solutions with passion and expertise",
+        "title2": "Why we started this Blog",
+        "subtitle2": "We started this blog to share our knowledge, inspire creativity, and connect with like-minded individuals around the world"
     }
 }

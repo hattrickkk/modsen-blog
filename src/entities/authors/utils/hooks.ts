@@ -15,12 +15,15 @@ export const useFetchAuthorById = (authorId: string) => {
     return author
 }
 
-export const useFetchAuthors = (params: FetchParams) => {
+export const useFetchAuthors = ({ limit, page }: FetchParams) => {
     const [authors, setAuthors] = useState<Author[]>([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
-        fetchAuthors(params)
+        setLoading(true)
+        fetchAuthors({ limit, page })
             .then(res => setAuthors(res))
             .catch(err => console.error(err))
-    }, [params])
-    return authors
+            .finally(() => setLoading(false))
+    }, [limit, page])
+    return { authors, loading }
 }

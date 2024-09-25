@@ -2,7 +2,7 @@
 
 import clsx from 'clsx'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { AnimationTypes, commonStyles, paths, ScrollAnimation, sen, Title } from '@/shared'
 
@@ -10,6 +10,7 @@ import styles from './styles.module.scss'
 
 export const AboutUs = () => {
     const t = useTranslations()
+    const locale = useLocale()
     return (
         <ScrollAnimation type={AnimationTypes.toLeft}>
             <section className={styles.section}>
@@ -27,7 +28,7 @@ export const AboutUs = () => {
                                 Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore et dolore magna aliqua.
                             </p>
-                            <Link href={paths.ABOUT} className={clsx(styles.link, sen.className)}>
+                            <Link href={`/${locale}/${paths.ABOUT}`} className={clsx(styles.link, sen.className)}>
                                 {t('button.title')}
                             </Link>
                         </div>

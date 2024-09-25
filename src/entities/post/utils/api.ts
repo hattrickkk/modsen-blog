@@ -23,3 +23,8 @@ export const getPostsById = async (id: string) => {
     }
     return await response.json()
 }
+
+export const getPostsArrByIds = async (arr: number[]) => {
+    const promises = arr.map(el => getPostsById(el.toString()))
+    return await Promise.all(promises)
+}

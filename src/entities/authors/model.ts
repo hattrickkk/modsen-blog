@@ -4,4 +4,5 @@ export type Author = {
     name: string
     description: string
     socials: string[]
+    posts: number[]
 }

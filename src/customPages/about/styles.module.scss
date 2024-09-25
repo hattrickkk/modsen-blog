@@ -1,0 +1,5 @@
+.wrapper {
+    & > *:last-child section {
+        padding-top: 0;
+    }
+}

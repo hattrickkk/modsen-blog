@@ -1,7 +1,1 @@
-import React from 'react'
-
-const About = () => {
-    return <div>page</div>
-}
-
-export default About
+export { About as default } from '@/customPages/about'

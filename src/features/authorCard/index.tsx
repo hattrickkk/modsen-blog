@@ -4,6 +4,7 @@ import { memo, useCallback } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 
 import { Author } from '@/entities'
 import { sen, SOCIALS } from '@/shared'
@@ -16,17 +17,16 @@ type Props = {
 
 export const AuthorCard = memo(({ author: { image, name, socials, id } }: Props) => {
     const router = useRouter()
+    const locale = useLocale()
 
     const handleCardClick = useCallback(
         (id: number) => () => {
-            router.push(`/author/${id}`)
+            router.push(`/${locale}/author/${id}`)
         },
-        [router]
+        [router, locale]
     )
 
-    const handleSocialClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.stopPropagation()
-    }, [])
+    const handleSocialClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => e.stopPropagation(), [])
 
     return (
         <div className={styles.card} onClick={handleCardClick(id)}>
