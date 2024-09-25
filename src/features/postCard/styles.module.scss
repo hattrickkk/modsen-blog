@@ -1,0 +1,142 @@
+.card {
+    @include flex-space-between;
+    gap: 32px;
+
+    .imageWrapper {
+        flex: 1 0 490px;
+        height: 320px;
+        overflow: hidden;
+
+        img {
+            @include image;
+        }
+    }
+
+    .info {
+        .subtitle {
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0.19em;
+            text-transform: uppercase;
+            color: $purple;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            margin-bottom: 16px;
+            text-align: left;
+            max-height: 145px;
+            overflow: hidden;
+        }
+
+        .text {
+            max-height: 110px;
+            overflow: hidden;
+        }
+    }
+
+    &.column {
+        flex-direction: column;
+
+        .imageWrapper {
+            flex: 1 0 280px;
+            width: 100%;
+        }
+
+        .info {
+            .title {
+                max-height: 120px;
+                line-height: 40px;
+                font-size: 28px;
+            }
+        }
+    }
+
+    .copyright {
+        margin-bottom: 16px;
+
+        a {
+            color: $purple;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .card {
+        .imageWrapper {
+            flex: 1 0 300px;
+            height: 200px;
+        }
+
+        .info {
+            .subtitle {
+                margin-bottom: 16px;
+            }
+
+            .title {
+                font-size: 30px;
+                max-height: 80px;
+                line-height: 38px;
+            }
+
+            .text {
+                max-height: 55px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .card {
+        flex-direction: column;
+        gap: 40px;
+
+        .imageWrapper {
+            width: 100%;
+            height: auto;
+        }
+
+        .info {
+            .title,
+            .text {
+                max-height: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .card.column {
+        gap: 20px;
+
+        .info {
+            .copyright {
+                margin-bottom: 10px;
+            }
+
+            .title {
+                font-size: 24px;
+                max-height: 85px;
+                line-height: 30px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .card {
+        gap: 30px;
+
+        .imageWrapper {
+            max-height: 200px;
+        }
+
+        .info {
+            .title,
+            .text {
+                max-height: none;
+            }
+        }
+    }
+}

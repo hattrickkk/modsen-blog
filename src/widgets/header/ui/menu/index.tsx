@@ -3,9 +3,10 @@
 import { memo, useRef } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Button, MENU_ITEMS, useOpenState, useOutsideClick } from '@/shared'
+import { Button, isLinkActive, MENU_ITEMS, useOpenState, useOutsideClick } from '@/shared'
 
 import { LanguageDropdown } from '../languageDropdown'
 import { VideoModal } from '../videoModal'
@@ -20,6 +21,7 @@ export const Menu = memo(() => {
     useOutsideClick(menuRef, closeHeader, styles.burgerButton)
     const t = useTranslations()
     const locale = useLocale()
+    const pathname = usePathname()
 
     return (
         <>
@@ -27,7 +29,13 @@ export const Menu = memo(() => {
                 <ul className={styles.menu}>
                     {MENU_ITEMS.map(({ path, name }) => (
                         <li key={path} className={styles.item}>
-                            <Link href={`/${locale}${path}`}>{t(`menuItems.${name}`)}</Link>
+                            <Link
+                                href={`/${locale}${path}`}
+                                onClick={closeHeader}
+                                className={clsx(isLinkActive({ pathname, itemPath: path, locale }) && styles.active)}
+                            >
+                                {t(`menuItems.${name}`)}
+                            </Link>
                         </li>
                     ))}
                     <LanguageDropdown />

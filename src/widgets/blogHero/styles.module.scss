@@ -1,0 +1,54 @@
+.hero {
+    padding: 160px 0 80px;
+    background-color: $lightPurple;
+
+    .wrapper {
+        @include flex-space-between;
+        gap: 32px;
+
+        & > *:last-child {
+            flex: 1 0 515px;
+        }
+    }
+
+    .imageWrapper {
+        img {
+            @include image;
+        }
+    }
+}
+
+@media screen and (max-width: $DESKTOP) {
+    .hero {
+        .wrapper {
+            align-items: stretch;
+        }
+
+        .imageWrapper {
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .hero {
+        .wrapper {
+            flex-direction: column;
+            gap: 40px;
+
+            & > *:last-child {
+                flex: 1 1 auto;
+            }
+        }
+
+        .imageWrapper {
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .hero {
+        padding: 120px 0 40px;
+    }
+}

@@ -1,0 +1,29 @@
+.arrows {
+    @include flex-center;
+    gap: 25px;
+
+    .arrow {
+        background-color: transparent;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 40px;
+        color: $darkBlue;
+
+        &.disable {
+            color: $gray;
+            pointer-events: none;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .arrows .arrow {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .arrows .arrow {
+        font-size: 20px;
+    }
+}

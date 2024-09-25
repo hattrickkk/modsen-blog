@@ -1,12 +1,18 @@
 import { ReactNode } from 'react'
 
-import { inter } from '@/shared'
+import { Locale } from '@/shared'
 
-const AppLayout = async ({ children }: { children: ReactNode }) => {
+type Props = {
+    children: ReactNode
+    params: { locale: Locale }
+}
+
+const AppLayout = async ({ children, params: { locale } }: Props) => {
     return (
-        <html lang='en'>
-            <body className={inter.className}>{children}</body>
+        <html lang={locale}>
+            <body>{children}</body>
         </html>
     )
 }
+
 export default AppLayout

@@ -1,4 +1,6 @@
-import { useRef } from 'react'
+'use client'
+
+import { useCallback, useRef } from 'react'
 import clsx from 'clsx'
 import routing from 'i18n/routing'
 import Image from 'next/image'
@@ -21,9 +23,12 @@ export const LanguageDropdown = () => {
     const router = useRouter()
     const t = useTranslations('language')
 
-    const handleMenuItemCLick = (localeName: string) => () =>
-        router.push(`/${localeName}/${pathname.replace(new RegExp(locale), '')}`)
-
+    const handleMenuItemCLick = useCallback(
+        (localeName: string) => () => {
+            router.push(`/${localeName}/${pathname.replace(new RegExp(locale), '')}`)
+        },
+        [locale, pathname, router]
+    )
     return (
         <div className={styles.dropdown}>
             <div className={styles.imageWrapper} onClick={isMenuOpen ? closeMenu : openMenu} ref={dropdownRef}>

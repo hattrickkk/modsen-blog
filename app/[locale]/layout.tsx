@@ -2,32 +2,32 @@ import { ReactNode } from 'react'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
-import { inter } from '@/shared'
+import { inter, Locale } from '@/shared'
 import { Footer, Header } from '@/widgets'
 
-import './styles/nullStyle.scss'
-import styles from './styles/global.module.scss'
+import '../styles/nullStyle.scss'
+import styles from '../styles/global.module.scss'
 
-const RootLayout = async ({
-    children,
-    params: { locale },
-}: {
+type Props = {
     children: ReactNode
-    params: { locale: 'en' | 'ru' }
-}) => {
-    const messages = await getMessages()
+    params: { locale: Locale }
+}
+
+const RootLayout = async ({ children, params: { locale } }: Props) => {
+    const messages = await getMessages({ locale })
+
     return (
-        <html lang={locale}>
-            <body className={inter.className}>
-                <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
+            <html lang={locale}>
+                <body className={inter.className}>
                     <div className={styles.wrapper}>
                         <Header />
-                        <main>{children}</main>
+                        <main className={styles.main}>{children}</main>
                         <Footer />
                     </div>
-                </NextIntlClientProvider>
-            </body>
-        </html>
+                </body>
+            </html>
+        </NextIntlClientProvider>
     )
 }
 export default RootLayout

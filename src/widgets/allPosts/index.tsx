@@ -1,24 +1,29 @@
-'use client'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
+import { Post } from '@/entities'
 import { SmallPost } from '@/features'
-import { AnimationTypes, paths, POSTS_ARR, Title } from '@/shared'
-import { ScrollAnimation } from '@/shared'
+import { AnimationTypes, paths, ScrollAnimation, Title } from '@/shared'
 
 import styles from './styles.module.scss'
 
-export const AllPosts = () => {
+type Props = {
+    posts: Post[]
+}
+
+export const AllPosts = ({ posts }: Props) => {
     const t = useTranslations('posts')
+    const locale = useLocale()
+
     return (
         <ScrollAnimation type={AnimationTypes.toLeft}>
             <div className={styles.wrapper}>
                 <header className={styles.header}>
                     <Title value={t('allPosts')} />
-                    <Link href={paths.BLOG}>{t('viewAll')}</Link>
+                    <Link href={`/${locale}/${paths.BLOG}`}>{t('viewAll')}</Link>
                 </header>
                 <div className={styles.posts}>
-                    {POSTS_ARR.map((post, i) => (
+                    {posts.map((post, i) => (
                         <ScrollAnimation type={AnimationTypes.toLeft} delay={`0.${i}`} key={post.id}>
                             <SmallPost post={post} />
                         </ScrollAnimation>

@@ -35,6 +35,10 @@
                 transition: all ease 0.3s;
 
                 &:hover {
+                    color: $darkYellow;
+                }
+
+                &.active {
                     color: $yellow;
                 }
             }

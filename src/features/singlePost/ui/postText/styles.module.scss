@@ -1,0 +1,61 @@
+.wrapper {
+    max-width: 840px;
+    margin: 0 auto;
+
+    .block {
+        margin-bottom: 48px;
+
+        .title {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 48px;
+            letter-spacing: -0.06em;
+            color: $darkBlue;
+            margin-bottom: 16px;
+        }
+
+        .menu {
+            margin: 24px 0;
+
+            .item {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                padding-left: 20px;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    left: 0;
+                    content: '·';
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .wrapper .block {
+        .title {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        .menu {
+            .item {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper .block {
+        margin-bottom: 40px;
+
+        .title {
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+}
