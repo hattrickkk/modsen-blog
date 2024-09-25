@@ -5,6 +5,7 @@
 
     .imageWrapper {
         max-width: 950px;
+        height: 705px;
 
         img {
             width: 100%;
@@ -49,7 +50,8 @@
 @media screen and (max-width: $SMALL_DESKTOP) {
     .section {
         .imageWrapper {
-            max-width: 700px;
+            max-width: 800px;
+            height: 500px;
         }
 
         .block {
@@ -79,28 +81,40 @@
     }
 }
 
-@media screen and (max-width: $SMALL_TABLET) {
-    .section .block {
-        position: relative;
-        max-width: 100%;
-        padding: 20px;
-        margin-top: 20px;
+@media screen and (max-width: $TABLET) {
+    .section {
+        .imageWrapper {
+            height: 300px;
+        }
+
+        .block {
+            position: relative;
+            max-width: 100%;
+            padding: 20px;
+            margin-top: 20px;
+        }
     }
 }
 
 @media screen and (max-width: $PHONE) {
-    .section .block {
-        .title {
-            font-size: 30px;
-            line-height: 36px;
+    .section {
+        .imageWrapper {
+            height: 200px;
         }
 
-        .text {
-            margin-bottom: 25px;
-        }
+        .block {
+            .title {
+                font-size: 30px;
+                line-height: 36px;
+            }
 
-        button {
-            width: 100%;
+            .text {
+                margin-bottom: 25px;
+            }
+
+            button {
+                width: 100%;
+            }
         }
     }
 }

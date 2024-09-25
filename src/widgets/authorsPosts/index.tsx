@@ -38,27 +38,25 @@ export const AuthorPosts = ({ allPosts }: Props) => {
     }, [allPosts, startIndex])
 
     return (
-        <ScrollAnimation type={AnimationTypes.toLeft}>
-            <section className={styles.section}>
-                <div className={commonStyles.container}>
-                    <ScrollAnimation type={AnimationTypes.toRight}>
-                        <h2 className={clsx(styles.title, sen.className)}>{t('posts')}</h2>
-                    </ScrollAnimation>
-                    <div className={styles.posts}>
-                        <PostsContainer posts={posts} />
-                    </div>
-                    {allPosts.length > POSTS_PER_PAGE && (
-                        <Pagination
-                            handleNextArrowClick={handleNextArrowClick}
-                            handlePrevArrowClick={handlePrevArrowClick}
-                            prevDisableCondition={page <= 1}
-                            nextDisableCondition={
-                                page === getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: allPosts.length })
-                            }
-                        />
-                    )}
+        <section className={styles.section}>
+            <div className={commonStyles.container}>
+                <ScrollAnimation type={AnimationTypes.toRight}>
+                    <h2 className={clsx(styles.title, sen.className)}>{t('posts')}</h2>
+                </ScrollAnimation>
+                <div className={styles.posts}>
+                    <PostsContainer posts={posts} />
                 </div>
-            </section>
-        </ScrollAnimation>
+                {allPosts.length > POSTS_PER_PAGE && (
+                    <Pagination
+                        handleNextArrowClick={handleNextArrowClick}
+                        handlePrevArrowClick={handlePrevArrowClick}
+                        prevDisableCondition={page <= 1}
+                        nextDisableCondition={
+                            page === getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: allPosts.length })
+                        }
+                    />
+                )}
+            </div>
+        </section>
     )
 }

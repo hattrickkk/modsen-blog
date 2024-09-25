@@ -30,7 +30,7 @@ export const AuthorsSection = memo(({ authorsCount = AUTHORS_PER_PAGE_HOME }: Pr
                 <ScrollAnimation type={AnimationTypes.toLeft}>
                     <Title value={t('title')} />
                 </ScrollAnimation>
-                {loading ? <Loader /> : <AuthorsContainer authors={authors} />}]
+                {loading ? <Loader /> : <AuthorsContainer authors={authors} />}
             </div>
         </section>
     )

@@ -1,12 +1,9 @@
-'use client'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { NavigateButton } from '@/features'
-import { AnimationTypes, commonStyles, paths, ScrollAnimation, sen } from '@/shared'
-
-import back from './back.png'
+import { AnimationTypes, commonStyles, ourStoryBackImage, paths, ScrollAnimation, sen } from '@/shared'
 
 import styles from './styles.module.scss'
 
@@ -18,7 +15,7 @@ export const OurStory = () => {
                 <div className={styles.inner}>
                     <ScrollAnimation type={AnimationTypes.toRight}>
                         <div className={styles.imageWrapper}>
-                            <Image src={back} alt='background' />
+                            <Image src={ourStoryBackImage} alt='background' />
                         </div>
                     </ScrollAnimation>
                     <ScrollAnimation type={AnimationTypes.toLeft} delay={0.1}>

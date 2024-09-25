@@ -3,15 +3,18 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { Author } from '@/entities'
-import { AnimationTypes, commonStyles, ScrollAnimation, sen, SOCIALS } from '@/shared'
+import { AnimationTypes, commonStyles, Loader, ScrollAnimation, sen, SOCIALS } from '@/shared'
 
 import styles from './styles.module.scss'
 type Props = {
     author: Author
 }
 
-export const AuthorInfo = ({ author: { image, name, description, socials } }: Props) => {
+export const AuthorInfo = ({ author }: Props) => {
     const t = useTranslations('author')
+    if (!author.name) return <Loader />
+    const { image, name, description, socials } = author
+
     return (
         <section className={styles.section}>
             <div className={styles.inner}>
