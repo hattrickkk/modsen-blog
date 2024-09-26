@@ -1,0 +1,42 @@
+.banner {
+    padding: 160px 0 80px;
+    background-color: $lightPurple;
+    text-align: center;
+    color: $darkBlue;
+
+    .title {
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 64px;
+        letter-spacing: -0.04em;
+        margin-bottom: 16px;
+    }
+
+    .subtitle {
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.19em;
+        text-transform: uppercase;
+
+        a {
+            color: $darkBlue;
+        }
+    }
+
+    .text {
+        max-width: 515px;
+        margin: 0 auto 32px;
+        color: $gray;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .banner {
+        padding: 120px 0 60px;
+
+        .title {
+            font-size: 44px;
+            line-height: 54px;
+        }
+    }
+}

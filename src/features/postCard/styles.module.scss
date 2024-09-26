@@ -52,6 +52,12 @@
         }
     }
 
+    &.fromCategory {
+        .imageWrapper {
+            max-width: 295px;
+        }
+    }
+
     .copyright {
         margin-bottom: 16px;
 

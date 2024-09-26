@@ -4,6 +4,8 @@ import { useTranslations } from 'next-intl'
 import { fetchPosts, getPostsArrByIds, getPostsById, getPostsCount, Post } from '@/entities'
 import { FetchParams, MONTHS } from '@/shared'
 
+import { getPostsByCategory } from './api'
+
 export const useFormateDate = (d: string) => {
     const date = new Date(d)
     const t = useTranslations('months')
@@ -22,18 +24,18 @@ export const useFormateDateForSinglePost = (d: string) => {
     return `${day}${t('singlePost.ending')} ${t(`months.${month}`)} ${year}`
 }
 
-export const useFetchPosts = ({ page, limit }: FetchParams) => {
+export const useFetchPosts = ({ page, limit, param = '', query = '' }: FetchParams) => {
     const [posts, setPosts] = useState<Post[]>([])
     const [postsCount, setPostsCount] = useState(0)
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         setLoading(true)
-        fetchPosts({ page, limit })
+        fetchPosts({ page, limit, param, query })
             .then(res => setPosts(res))
             .catch(err => console.error(err))
             .finally(() => setLoading(false))
-    }, [page, limit])
+    }, [page, limit, param, query])
 
     useEffect(() => {
         getPostsCount()
@@ -63,5 +65,15 @@ export const useFetchPostsByIdsArr = (arr: number[]) => {
             .then(res => setPosts(res))
             .catch(err => console.error(err))
     }, [arr])
+    return posts
+}
+
+export const useFetchPostsByCategory = (category: string) => {
+    const [posts, setPosts] = useState<Post[]>([])
+    useEffect(() => {
+        getPostsByCategory(category)
+            .then(res => setPosts(res))
+            .catch(err => console.error(err))
+    }, [category])
     return posts
 }

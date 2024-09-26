@@ -1,0 +1,99 @@
+.wrapper {
+    @include flex-space-between;
+    align-items: stretch;
+    gap: 140px;
+    padding: 128px 0 70px;
+
+    .info {
+        @include flex-space-between;
+        flex-direction: column;
+        gap: 40px;
+
+        button {
+            background-color: transparent;
+            font-size: 18px;
+            font-weight: 600;
+            color: $darkGray;
+            text-align: center;
+        }
+    }
+
+    .postsWrapper {
+        flex: 1 1 840px;
+
+        & > *:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+
+    .aside {
+        flex: 1 0 295px;
+
+        .clearButton {
+            background-color: transparent;
+            font-size: 16px;
+            margin-top: 20px;
+            font-weight: 500;
+            padding-left: 3px;
+            color: $darkGray;
+        }
+    }
+}
+
+.pagination {
+    margin-bottom: 128px;
+}
+
+@media screen and (max-width: $DESKTOP) {
+    .wrapper {
+        gap: 80px;
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .wrapper {
+        padding: 90px 0 20px;
+        flex-direction: column;
+
+        .postsWrapper {
+            order: 1;
+            flex: 1 1 auto;
+        }
+
+        .aside {
+            flex: 1 1 auto;
+        }
+    }
+
+    .pagination {
+        margin-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .wrapper {
+        .postsWrapper {
+            & > * {
+                max-width: 500px;
+                margin: 0 auto 60px;
+            }
+
+            .title {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .wrapper {
+        padding-top: 60px;
+        gap: 60px;
+
+        .postsWrapper {
+            & > *:not(:last-child) {
+                margin-bottom: 60px;
+            }
+        }
+    }
+}

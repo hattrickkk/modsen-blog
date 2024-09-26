@@ -27,6 +27,7 @@ export {
     POSTS_PER_PAGE_SECTION,
 } from './constants/magicValues'
 export { CATEGORY_ITEMS } from './constants/categoryItems'
+export { TAGS } from './constants/tags'
 export { SOCIAL_LINKS } from './mocks/socialsLinks'
 export { TESTIMONIALS } from './mocks/testimonials'
 export { useValidateInput } from './utils/hooks/useValidateInput'

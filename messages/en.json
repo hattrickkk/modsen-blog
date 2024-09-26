@@ -28,7 +28,8 @@
         "startup": "Startup",
         "economy": "Economy",
         "technology": "Technology",
-        "title": "Choose A Category"
+        "title": "Choose A Category",
+        "categories": "Categories"
     },
     "posts": {
         "featuredPost": "Featured Post",
@@ -114,5 +115,13 @@
         "subtitle1": "Our team of creatives brings innovative ideas to life, crafting unique solutions with passion and expertise",
         "title2": "Why we started this Blog",
         "subtitle2": "We started this blog to share our knowledge, inspire creativity, and connect with like-minded individuals around the world"
+    },
+    "categoryPage": {
+        "title": "All Tags",
+        "clearTags": "Clear Tags",
+        "search": "Search",
+        "searchPlaceholder": "Search for tag...",
+        "seeAll": "See All >",
+        "nothingFound": "There are no posts in this category"
     }
 }

@@ -6,14 +6,23 @@ import { useTranslations } from 'next-intl'
 
 import { getPagesCount, useFetchPosts } from '@/entities'
 import { PostsContainer } from '@/features'
-import { AnimationTypes, commonStyles, Loader, Pagination, POSTS_PER_PAGE, ScrollAnimation, sen } from '@/shared'
+import {
+    AnimationTypes,
+    commonStyles,
+    DEFAULT_PAGE,
+    Loader,
+    Pagination,
+    POSTS_PER_PAGE,
+    ScrollAnimation,
+    sen,
+} from '@/shared'
 
 import styles from './styles.module.scss'
 
 export const BlogSection = () => {
     const t = useTranslations('')
 
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(DEFAULT_PAGE)
     const { posts, postsCount, loading } = useFetchPosts({ page, limit: POSTS_PER_PAGE })
 
     const handleNextArrowClick = useCallback(() => setPage(prevPage => prevPage + 1), [])
