@@ -16,3 +16,10 @@
     object-fit: cover;
     object-position: center;
 }
+
+@mixin errorMessage() {
+    font-size: 14px;
+    color: $red;
+    position: absolute;
+    bottom: -25px;
+}

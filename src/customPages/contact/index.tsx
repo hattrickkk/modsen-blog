@@ -1,3 +1,4 @@
+import { ContactForm } from '@/features'
 import { commonStyles } from '@/shared'
 
 import { ContactInfo } from './ui/contactInfo'
@@ -8,6 +9,7 @@ export const Contact = () => {
         <div className={styles.wrapper}>
             <div className={commonStyles.container}>
                 <ContactInfo />
+                <ContactForm />
             </div>
         </div>
     )

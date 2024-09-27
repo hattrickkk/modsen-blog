@@ -1,0 +1,66 @@
+.wrapper {
+    margin-bottom: 70px;
+    .form {
+        max-width: 768px;
+        margin: 0 auto;
+
+        & > *:not(:last-child) {
+            margin-bottom: 32px;
+        }
+
+        input,
+        textarea {
+            border: 1px solid rgba($gray, 0.5);
+            border-radius: 2px;
+            padding: 22px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        .error {
+            @include errorMessage;
+            bottom: -17px;
+        }
+
+        .textareaWrapper {
+            position: relative;
+
+            textarea {
+                width: 100%;
+                resize: none;
+                height: 145px;
+
+                & > *:not(:last-child) {
+                    margin-bottom: 3px;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: rgba($gray, 0.3);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper .header {
+        margin-bottom: 45px;
+
+        .title {
+            font-size: 40px;
+            line-height: 52px;
+            margin-bottom: 24px;
+        }
+
+        .text {
+            color: rgba($gray, 0.85);
+        }
+    }
+}

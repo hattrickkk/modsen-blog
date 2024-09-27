@@ -41,16 +41,12 @@ export default tseslint.config(
             'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
             'prettier/prettier': 'error',
             'no-unused-vars': 'error',
+            '@typescript-eslint/no-unused-expressions': 'off',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
             'simple-import-sort/imports': [
                 'error',
                 {
-                    groups: [
-                        ['^react', '^@?\\w'],
-                        ['^(@/.*|$)'],
-                        ['^\\.'],
-                        ['^@styles/.*\\.scss$', '^.+\\.s?css$'],
-                    ],
+                    groups: [['^react', '^@?\\w'], ['^(@/.*|$)'], ['^\\.'], ['^@styles/.*\\.scss$', '^.+\\.s?css$']],
                 },
             ],
             'prefer-arrow-callback': ['error', { allowNamedFunctions: false }],
