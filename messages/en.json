@@ -123,5 +123,24 @@
         "searchPlaceholder": "Search for tag...",
         "seeAll": "See All >",
         "nothingFound": "There are no posts in this category"
+    },
+    "contact": {
+        "contactUs": "Contact us",
+        "title": "Let’s Start a Conversation",
+        "workingHours": "Working hours",
+        "mondayToFriday": "Monday To Friday",
+        "available": "Our Support Team is available 24/7",
+        "fullName": "Full Name",
+        "email": "Your Email",
+        "queryRelated": "Query Related",
+        "queries": {
+            "ownBlog": "Создание собственного блога",
+            "personalGrowth": "Personal growth",
+            "creativeContent": "Creating creative content",
+            "team": "Organizing a cohesive team",
+            "potential": "Realizing your own potential"
+        },
+        "message": "Message",
+        "sendMessage": "Send Message"
     }
 }

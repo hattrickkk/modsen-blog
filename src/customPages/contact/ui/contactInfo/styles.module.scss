@@ -1,0 +1,101 @@
+.wrapper {
+    max-width: 768px;
+    margin: 0 auto 32px;
+
+    .header {
+        text-align: center;
+        margin-bottom: 64px;
+        color: $darkBlue;
+
+        .subtitle {
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.19em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 64px;
+            margin-bottom: 24px;
+        }
+
+        .text {
+            color: rgba($gray, 0.85);
+        }
+    }
+
+    .block {
+        color: $white;
+        padding: 49px 64px;
+        background-color: $purple;
+        @include flex-space-between;
+        align-items: stretch;
+        gap: 42px;
+
+        .column {
+            flex: 1 1 45%;
+
+            .title {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 32px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                line-height: 20px;
+                opacity: 0.6;
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 1px solid rgba($white, 0.4);
+            }
+
+            .text {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .wrapper {
+        .header {
+            margin-bottom: 55px;
+        }
+
+        .block {
+            padding: 35px;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .wrapper .block {
+        flex-direction: column;
+
+        .column .subtitle {
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper .header {
+        margin-bottom: 45px;
+
+        .title {
+            font-size: 40px;
+            line-height: 52px;
+            margin-bottom: 24px;
+        }
+
+        .text {
+            color: rgba($gray, 0.85);
+        }
+    }
+}

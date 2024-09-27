@@ -123,5 +123,24 @@
         "searchPlaceholder": "Поиск по тегу...",
         "seeAll": "Посмотреть все >",
         "nothingFound": "В этой категории нет публикаций"
+    },
+    "contact": {
+        "contactUs": "Свяжитесь с нами",
+        "title": "Давайте начнем разговор",
+        "workingHours": "Рабочие часы",
+        "mondayToFriday": "С Понедльника по Пятницу",
+        "available": "Наша команда поддержки доступна 24/7",
+        "fullName": "Полное Имя",
+        "email": "Ваша Электронная Почта",
+        "queryRelated": "Запрос связан с",
+        "queries": {
+            "ownBlog": "Создание собственного блога",
+            "personalGrowth": "Личностный рост",
+            "creativeContent": "Создание креативного контента",
+            "team": "Организация сплоченной команды",
+            "potential": "Реализация собственного потенциала"
+        },
+        "message": "Message",
+        "sendMessage": "Send Message"
     }
 }
