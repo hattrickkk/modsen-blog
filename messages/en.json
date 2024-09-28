@@ -142,5 +142,13 @@
         },
         "message": "Message",
         "sendMessage": "Send Message"
+    },
+    "messages": {
+        "letter": "Thanks for lettering to us!",
+        "subscribe": "Thanks for subscribing to our blog!",
+        "fail": "Something went wrong",
+        "invalidEmail": "Invalid email address",
+        "nameMin": "Fill more than 2 characters",
+        "messageFill": "Fill the field"
     }
 }

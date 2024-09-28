@@ -1,18 +1,22 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { Dispatch, memo, SetStateAction, useCallback, useRef } from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
-import { useOpenState } from '@/shared'
+import { useOpenState, useOutsideClick } from '@/shared'
 
-import { QUERY_ITEMS } from './queryItems'
+import { QUERY_ITEMS } from '../../constants/queryItems'
 
 import styles from './styles.module.scss'
 
-export const QueryDropdown = () => {
+type Props = {
+    setQuery: Dispatch<SetStateAction<string>>
+    query: string
+}
+
+export const QueryDropdown = memo(({ query, setQuery }: Props) => {
     const [isMenuOpen, closeMenu, openMenu] = useOpenState()
-    const [value, setValue] = useState(QUERY_ITEMS[0])
 
     const handleDropdownClick = useCallback(
         (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -24,17 +28,19 @@ export const QueryDropdown = () => {
 
     const handleDropdownItemClick = useCallback(
         (itemValue: string) => () => {
-            setValue(itemValue)
+            setQuery(itemValue)
             closeMenu()
         },
-        [closeMenu]
+        [closeMenu, setQuery]
     )
 
     const t = useTranslations('contact.queries')
+    const dropdownRef = useRef<HTMLDivElement>(null)
+    useOutsideClick(dropdownRef, closeMenu)
 
     return (
-        <div className={clsx(styles.dropdown, isMenuOpen && styles.open)}>
-            <button onClick={handleDropdownClick}>{t(value)}</button>
+        <div className={clsx(styles.dropdown, isMenuOpen && styles.open)} ref={dropdownRef}>
+            <button onClick={handleDropdownClick}>{t(query)}</button>
             <div className={clsx(styles.menuWrapper, isMenuOpen && styles.open)}>
                 <ul className={styles.menu}>
                     {QUERY_ITEMS.map(item => (
@@ -46,4 +52,4 @@ export const QueryDropdown = () => {
             </div>
         </div>
     )
-}
+})

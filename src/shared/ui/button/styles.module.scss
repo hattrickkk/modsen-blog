@@ -18,4 +18,17 @@
             opacity: 0.9;
         }
     }
+
+    &.disabled {
+        pointer-events: none;
+        background-color: rgba($gray, 0.1);
+    }
+
+    &.submitting {
+        cursor: wait;
+
+        &:hover {
+            cursor: wait;
+        }
+    }
 }

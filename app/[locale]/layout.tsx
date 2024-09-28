@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { Toaster } from 'react-hot-toast'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
@@ -21,6 +22,7 @@ const RootLayout = async ({ children, params: { locale } }: Props) => {
             <html lang={locale}>
                 <body className={inter.className}>
                     <div className={styles.wrapper}>
+                        <Toaster />
                         <Header />
                         <main className={styles.main}>{children}</main>
                         <Footer />
