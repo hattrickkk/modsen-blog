@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, Dispatch, memo, SetStateAction, useCallback, useEffect, useState } from 'react'
+import { ChangeEvent, Dispatch, memo, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
@@ -39,17 +39,17 @@ export const Search = memo(({ posts, setSelectedTags }: Props) => {
         )
     }, [debouncedValue])
 
+    const searchedPostsByTag = useMemo(() => {
+        return posts
+            .filter(post => {
+                if (post.tags.includes(findedTag as string)) return post
+            })
+            .slice(0, 4)
+    }, [posts, findedTag])
+
     useEffect(() => {
-        setSearchedPosts(
-            !findedTag
-                ? []
-                : posts
-                      .filter(post => {
-                          if (post.tags.includes(findedTag)) return post
-                      })
-                      .slice(0, 4)
-        )
-    }, [findedTag, posts])
+        setSearchedPosts(!findedTag ? [] : searchedPostsByTag)
+    }, [searchedPostsByTag, findedTag])
 
     const handleSearchButtonClick = useCallback(() => {
         setSelectedTags(findedTag ? [findedTag] : ['none'])
