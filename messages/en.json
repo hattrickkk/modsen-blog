@@ -155,5 +155,11 @@
         "minsk": "Minsk",
         "greenland": "Greenland",
         "chita": "Chita"
+    },
+    "privacyPolicy": {
+        "privacyPolicy": "Privacy Policy",
+        "title": "How we protect your data",
+        "subtitle": "Processing and protection of personal information",
+        "lastUpdated": "Last Updated  on 27th January 2022"
     }
 }

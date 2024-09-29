@@ -5,6 +5,7 @@ import { Loader } from '@/shared'
 import { AuthorInfo, AuthorPosts } from '@/widgets'
 
 import styles from './styles.module.scss'
+
 type Props = {
     params: { id: string }
 }

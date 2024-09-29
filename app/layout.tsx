@@ -2,6 +2,8 @@ import { ReactNode } from 'react'
 
 import { Locale } from '@/shared'
 
+import ErrorBoundary from './global-error'
+
 type Props = {
     children: ReactNode
     params: { locale: Locale }
@@ -10,7 +12,9 @@ type Props = {
 const AppLayout = async ({ children, params: { locale } }: Props) => {
     return (
         <html lang={locale}>
-            <body>{children}</body>
+            <body>
+                <ErrorBoundary>{children}</ErrorBoundary>
+            </body>
         </html>
     )
 }
