@@ -1,9 +1,11 @@
 import { ContactForm } from '@/features'
 import { commonStyles } from '@/shared'
+import { WorldMap } from '@/widgets'
 
 import { ContactInfo } from './ui/contactInfo'
 
 import styles from './styles.module.scss'
+
 export const Contact = () => {
     return (
         <div className={styles.wrapper}>
@@ -11,6 +13,7 @@ export const Contact = () => {
                 <ContactInfo />
                 <ContactForm />
             </div>
+            <WorldMap />
         </div>
     )
 }

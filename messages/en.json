@@ -150,5 +150,10 @@
         "invalidEmail": "Invalid email address",
         "nameMin": "Fill more than 2 characters",
         "messageFill": "Fill the field"
+    },
+    "points": {
+        "minsk": "Minsk",
+        "greenland": "Greenland",
+        "chita": "Chita"
     }
 }
