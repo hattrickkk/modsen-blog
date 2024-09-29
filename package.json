@@ -10,7 +10,9 @@
         "build": "next build",
         "lint": "npx eslint .",
         "lint:fix": "npx eslint . --fix",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
     },
     "keywords": [],
     "author": "",
@@ -27,12 +29,21 @@
         "react-hook-form": "^7.53.0",
         "react-hot-toast": "^2.4.1",
         "react-map-gl": "^7.1.7",
-        "sass": "^1.78.0",
+        "sass": "^1.79.4",
         "zod": "^3.23.8"
     },
     "devDependencies": {
+        "@chromatic-com/storybook": "1.9.0",
         "@eslint/compat": "^1.1.1",
         "@eslint/js": "9.9.0",
+        "@storybook/addon-essentials": "8.3.4",
+        "@storybook/addon-interactions": "8.3.4",
+        "@storybook/addon-links": "8.3.4",
+        "@storybook/addon-onboarding": "8.3.4",
+        "@storybook/blocks": "8.3.4",
+        "@storybook/nextjs": "8.3.4",
+        "@storybook/react": "8.3.4",
+        "@storybook/test": "8.3.4",
         "@types/lodash": "^4.17.9",
         "@types/node": "22.5.4",
         "@types/react": "18.3.5",
@@ -50,11 +61,20 @@
         "eslint-plugin-react-hooks": "^4.6.2",
         "eslint-plugin-react-refresh": "^0.4.11",
         "eslint-plugin-simple-import-sort": "^12.1.1",
+        "eslint-plugin-storybook": "^0.9.0",
         "globals": "^15.9.0",
         "husky": "^9.1.5",
         "lint-staged": "^15.2.10",
         "prettier": "^3.3.3",
+        "storybook": "8.3.4",
+        "storybook-addon-next": "^1.8.0",
+        "storybook-next-intl": "^1.1.4",
         "typescript": "5.5.3",
         "typescript-eslint": "^8.5.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:storybook/recommended"
+        ]
     }
 }
