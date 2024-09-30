@@ -1,5 +1,6 @@
 'use client'
 
+import { memo } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -13,35 +14,40 @@ import styles from './styles.module.scss'
 type Props = {
     post: Post
     inColumn?: boolean
+    fromCategories?: boolean
 }
 
-export const PostCard = ({
-    post: { id, title, image, text, category, authorId, created },
-    inColumn = false,
-}: Props) => {
-    const t = useTranslations()
-    const locale = useLocale()
-    const date = useFormateDate(created)
-    const author = useFetchAuthorById(authorId)
+export const PostCard = memo(
+    ({
+        post: { id, title, image, text, category, authorId, created },
+        inColumn = false,
+        fromCategories = false,
+    }: Props) => {
+        const t = useTranslations()
+        const locale = useLocale()
+        const date = useFormateDate(created)
+        const author = useFetchAuthorById(authorId)
 
-    return (
-        <div className={clsx(styles.card, inColumn && styles.column)}>
-            <div className={styles.imageWrapper}>
-                <Image src={image as string} alt='post-photo' width={490} height={320} />
+        return (
+            <div className={clsx(styles.card, inColumn && styles.column, fromCategories && styles.fromCategory)}>
+                <div className={styles.imageWrapper}>
+                    <Image src={image as string} alt='post-photo' width={490} height={320} />
+                </div>
+                <div className={styles.info}>
+                    {inColumn ? (
+                        <p className={styles.copyright}>
+                            {t('hero.copyright')} <Link href={`/${locale}/author/${authorId}`}>{author.name}</Link> |{' '}
+                            {date}
+                        </p>
+                    ) : (
+                        <h3 className={styles.subtitle}>{t(`categories.${category}`)}</h3>
+                    )}
+                    <Link href={`/${locale}/post/${id}`}>
+                        <Title value={title} className={styles.title} />
+                    </Link>
+                    <p className={styles.text}>{text}</p>
+                </div>
             </div>
-            <div className={styles.info}>
-                {inColumn ? (
-                    <p className={styles.copyright}>
-                        {t('hero.copyright')} <Link href={`/${locale}/author/${authorId}`}>{author.name}</Link> | {date}
-                    </p>
-                ) : (
-                    <h3 className={styles.subtitle}>{t(`categories.${category}`)}</h3>
-                )}
-                <Link href={`/${locale}/post/${id}`}>
-                    <Title value={title} className={styles.title} />
-                </Link>
-                <p className={styles.text}>{text}</p>
-            </div>
-        </div>
-    )
-}
+        )
+    }
+)

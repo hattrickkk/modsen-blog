@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 import { Author } from '@/entities'
-import { AnimationTypes, commonStyles, Loader, ScrollAnimation, sen, SOCIALS } from '@/shared'
+import { AnimationTypes, commonStyles, ScrollAnimation, sen, SOCIALS } from '@/shared'
 
 import styles from './styles.module.scss'
 type Props = {
@@ -12,7 +12,6 @@ type Props = {
 
 export const AuthorInfo = ({ author }: Props) => {
     const t = useTranslations('author')
-    if (!author.name) return <Loader />
     const { image, name, description, socials } = author
 
     return (

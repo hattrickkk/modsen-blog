@@ -2,7 +2,7 @@
 
 import { memo, useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslations } from 'next-intl'
 
@@ -14,11 +14,17 @@ import { sendEmail } from './utils/sendEmail'
 import styles from './styles.module.scss'
 
 export const Subscribe = memo(() => {
-    const { control, handleSubmit, reset } = useForm<SubscribeFormData>({
+    const {
+        control,
+        handleSubmit,
+        reset,
+        formState: { isSubmitting },
+    } = useForm<SubscribeFormData>({
         resolver: zodResolver(emailSchema),
         mode: 'onBlur',
     })
 
+    const t = useTranslations()
     const [emailField, emailError] = useValidateInput<SubscribeFormData>('email', control)
 
     const handleFormSubmit = useCallback(
@@ -27,19 +33,19 @@ export const Subscribe = memo(() => {
             if (status === 200) {
                 reset()
             }
-            toast(message, NOTIFY_OPTIONS)
+            toast(t(`messages.${message}`), NOTIFY_OPTIONS)
         },
-        [reset]
+        [reset, t]
     )
-    const t = useTranslations('footer')
 
     return (
         <div className={styles.subscribe}>
-            <Toaster />
-            <Title value={t('title')} className={styles.title} />
+            <Title value={t('footer.title')} className={styles.title} />
             <form className={styles.form} onSubmit={handleSubmit(handleFormSubmit)}>
-                <InputWithError placeholder={t('placeholder')} error={emailError} controllerProps={emailField} />
-                <Button type='submit'>{t('button')} </Button>
+                <InputWithError placeholder={t('footer.placeholder')} error={emailError} controllerProps={emailField} />
+                <Button type='submit' isSubmitting={isSubmitting}>
+                    {t('footer.button')}
+                </Button>
             </form>
         </div>
     )

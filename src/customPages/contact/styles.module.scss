@@ -1,0 +1,9 @@
+.wrapper {
+    padding-top: 210px;
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper {
+        padding-top: 140px;
+    }
+}

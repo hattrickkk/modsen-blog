@@ -1,7 +1,9 @@
 import { API_URL, FetchParams } from '@/shared'
 
-export const fetchPosts = async ({ page, limit }: FetchParams) => {
-    const response = await fetch(`${API_URL}/posts?page=${page}&limit=${limit}`)
+export const fetchPosts = async ({ page, limit, query, param }: FetchParams) => {
+    const response = await fetch(
+        `${API_URL}/posts?page=${page}&limit=${limit}${query && param && `&${param}=${query}`}`
+    )
     if (!response.ok) {
         throw new Error('Response data error')
     }
@@ -14,6 +16,14 @@ export const getPostsCount = async () => {
         throw new Error('Response data error')
     }
     return (await response.json()).length
+}
+
+export const getPostsByCategory = async (category: string) => {
+    const response = await fetch(`${API_URL}/posts?category=${category}`)
+    if (!response.ok) {
+        throw new Error('Response data error')
+    }
+    return await response.json()
 }
 
 export const getPostsById = async (id: string) => {

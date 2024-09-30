@@ -18,18 +18,22 @@
     "dependencies": {
         "@emailjs/browser": "^4.4.1",
         "@hookform/resolvers": "^3.9.0",
+        "lodash": "^4.17.21",
+        "mapbox-gl": "^3.7.0",
         "next": "^14.2.9",
         "next-intl": "^3.19.3",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-hook-form": "^7.53.0",
         "react-hot-toast": "^2.4.1",
+        "react-map-gl": "^7.1.7",
         "sass": "^1.78.0",
         "zod": "^3.23.8"
     },
     "devDependencies": {
         "@eslint/compat": "^1.1.1",
         "@eslint/js": "9.9.0",
+        "@types/lodash": "^4.17.9",
         "@types/node": "22.5.4",
         "@types/react": "18.3.5",
         "@types/react-dom": "^18.3.0",

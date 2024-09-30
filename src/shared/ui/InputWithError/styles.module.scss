@@ -7,8 +7,6 @@
     }
 
     .error {
-        color: $red;
-        position: absolute;
-        bottom: -35px;
+        @include errorMessage;
     }
 }

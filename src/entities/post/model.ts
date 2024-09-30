@@ -8,4 +8,5 @@ export interface Post {
     created: string
     category: Category
     image: string
+    tags: string[]
 }

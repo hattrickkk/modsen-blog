@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useRef } from 'react'
+import { memo, useCallback, useRef } from 'react'
 import clsx from 'clsx'
 import routing from 'i18n/routing'
 import Image from 'next/image'
@@ -13,7 +13,7 @@ import languageIcon from './language.svg'
 
 import styles from './styles.module.scss'
 
-export const LanguageDropdown = () => {
+export const LanguageDropdown = memo(() => {
     const locale = useLocale()
     const [isMenuOpen, closeMenu, openMenu] = useOpenState()
 
@@ -49,4 +49,4 @@ export const LanguageDropdown = () => {
             </div>
         </div>
     )
-}
+})

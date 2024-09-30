@@ -16,6 +16,7 @@ export { SOCIALS } from './constants/socials'
 export { MENU_ITEMS } from './constants/menuItems'
 export { NOTIFY_OPTIONS } from './constants/notifyOptions'
 export { AnimationTypes } from './constants/animationTypes'
+export { MessagesKeys } from './constants/messagesKeys'
 export {
     POSTS_PER_PAGE,
     API_URL,
@@ -27,12 +28,14 @@ export {
     POSTS_PER_PAGE_SECTION,
 } from './constants/magicValues'
 export { CATEGORY_ITEMS } from './constants/categoryItems'
+export { TAGS } from './constants/tags'
 export { SOCIAL_LINKS } from './mocks/socialsLinks'
 export { TESTIMONIALS } from './mocks/testimonials'
 export { useValidateInput } from './utils/hooks/useValidateInput'
 export { useOpenState } from './utils/hooks/useOpenState'
 export { useOutsideClick } from './utils/hooks/useOutsideClick'
-export { isLinkActive } from './utils/helpers'
+export { isLinkActive } from './utils/helpers/isLinkActive'
+export { sendLetter } from './utils/helpers/sendLetter'
 export { type FetchParams } from './types/functionsTypes'
 export { type Locale } from './types/locale'
 export { default as ourStoryBackImage } from './assets/ourStory.png'

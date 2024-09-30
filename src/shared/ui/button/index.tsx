@@ -13,13 +13,28 @@ type Props = {
     onClick?: VoidFunction
     secondary?: boolean
     type?: 'button' | 'submit'
+    disabled?: boolean
+    isSubmitting?: boolean
 }
 
-export const Button = ({ children, onClick, secondary = false, type = 'button' }: Props) => {
+export const Button = ({
+    children,
+    onClick,
+    secondary = false,
+    type = 'button',
+    disabled = false,
+    isSubmitting = false,
+}: Props) => {
     const t = useTranslations('button')
     return (
         <button
-            className={clsx(styles.button, sen.className, secondary && styles.secondary)}
+            className={clsx(
+                styles.button,
+                sen.className,
+                secondary && styles.secondary,
+                disabled && styles.disabled,
+                isSubmitting && styles.submitting
+            )}
             onClick={onClick}
             type={type}
         >

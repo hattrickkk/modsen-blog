@@ -28,7 +28,8 @@
         "startup": "Startup",
         "economy": "Economy",
         "technology": "Technology",
-        "title": "Choose A Category"
+        "title": "Choose A Category",
+        "categories": "Categories"
     },
     "posts": {
         "featuredPost": "Featured Post",
@@ -114,5 +115,45 @@
         "subtitle1": "Our team of creatives brings innovative ideas to life, crafting unique solutions with passion and expertise",
         "title2": "Why we started this Blog",
         "subtitle2": "We started this blog to share our knowledge, inspire creativity, and connect with like-minded individuals around the world"
+    },
+    "categoryPage": {
+        "title": "All Tags",
+        "clearTags": "Clear Tags",
+        "search": "Search",
+        "searchPlaceholder": "Search for tag...",
+        "seeAll": "See All >",
+        "nothingFound": "There are no posts in this category"
+    },
+    "contact": {
+        "contactUs": "Contact us",
+        "title": "Let’s Start a Conversation",
+        "workingHours": "Working hours",
+        "mondayToFriday": "Monday To Friday",
+        "available": "Our Support Team is available 24/7",
+        "fullName": "Full Name",
+        "email": "Your Email",
+        "queryRelated": "Query Related",
+        "queries": {
+            "ownBlog": "Creating your own blog",
+            "personalGrowth": "Personal growth",
+            "creativeContent": "Creating creative content",
+            "team": "Organizing a cohesive team",
+            "potential": "Realizing your own potential"
+        },
+        "message": "Message",
+        "sendMessage": "Send Message"
+    },
+    "messages": {
+        "letter": "Thanks for lettering to us!",
+        "subscribe": "Thanks for subscribing to our blog!",
+        "fail": "Something went wrong",
+        "invalidEmail": "Invalid email address",
+        "nameMin": "Fill more than 2 characters",
+        "messageFill": "Fill the field"
+    },
+    "points": {
+        "minsk": "Minsk",
+        "greenland": "Greenland",
+        "chita": "Chita"
     }
 }
