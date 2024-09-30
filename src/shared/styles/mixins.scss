@@ -23,3 +23,11 @@
     position: absolute;
     bottom: -25px;
 }
+
+@mixin subtitle() {
+    font-weight: 600;
+    letter-spacing: 0.19em;
+    text-transform: uppercase;
+    color: $darkBlue;
+    line-height: 20px;
+}

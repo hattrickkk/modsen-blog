@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { Toaster } from 'react-hot-toast'
+import { Metadata } from 'next/types'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 
@@ -12,6 +13,11 @@ import styles from '../styles/global.module.scss'
 type Props = {
     children: ReactNode
     params: { locale: Locale }
+}
+
+export const metadata: Metadata = {
+    title: 'Modsen Client Blog',
+    description: 'Blog Application for Modsen Clients',
 }
 
 const RootLayout = async ({ children, params: { locale } }: Props) => {

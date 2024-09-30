@@ -12,9 +12,9 @@ type Props = {
 
 export const AuthorPage = ({ params: { id } }: Props) => {
     const author = useFetchAuthorById(id)
-    const posts = useFetchPostsByIdsArr(author.posts)
+    const { posts, loading } = useFetchPostsByIdsArr(author.posts)
 
-    if (!author.name)
+    if (!author.name || loading)
         return (
             <div className={styles.wrapper}>
                 <Loader />

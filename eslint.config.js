@@ -41,6 +41,7 @@ export default tseslint.config(
             'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
             'prettier/prettier': 'error',
             'no-unused-vars': 'error',
+            'react-refresh/only-export-components': 'off',
             '@typescript-eslint/no-unused-expressions': 'off',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
             'simple-import-sort/imports': [

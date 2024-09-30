@@ -67,9 +67,11 @@ export const ContactForm = memo(() => {
                         {messageError && <p className={styles.error}>{t(`messages.${messageError.message}`)}</p>}
                     </div>
                 </ScrollAnimation>
-                <ScrollAnimation type={AnimationTypes.toRight} delay={0.3}>
-                    <QueryDropdown query={query} setQuery={setQuery} />
-                </ScrollAnimation>
+                <div className={styles.dropdownWrapper}>
+                    <ScrollAnimation type={AnimationTypes.toRight} delay={0.3}>
+                        <QueryDropdown query={query} setQuery={setQuery} />
+                    </ScrollAnimation>
+                </div>
                 <ScrollAnimation type={AnimationTypes.toRight} delay={0.4}>
                     <Button type='submit' disabled={!isValid} isSubmitting={isSubmitting}>
                         {t('contact.sendMessage')}

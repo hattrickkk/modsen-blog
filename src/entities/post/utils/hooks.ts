@@ -60,12 +60,15 @@ export const useFetchPostById = (id: string) => {
 
 export const useFetchPostsByIdsArr = (arr: number[]) => {
     const [posts, setPosts] = useState<Post[]>([])
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
+        setLoading(true)
         getPostsArrByIds(arr)
             .then(res => setPosts(res))
             .catch(err => console.error(err))
+            .finally(() => setLoading(false))
     }, [arr])
-    return posts
+    return { posts, loading }
 }
 
 export const useFetchPostsByCategory = (category: string) => {

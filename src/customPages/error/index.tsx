@@ -16,8 +16,8 @@ type Props = {
 export const Error = ({ name, message, reloadClickHandler }: Props) => {
     const router = useRouter()
     const handkeReloadPageButtonClick = useCallback(() => {
-        router.push('/')
         reloadClickHandler()
+        router.replace('/')
     }, [reloadClickHandler, router])
 
     return (
