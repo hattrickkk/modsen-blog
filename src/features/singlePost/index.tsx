@@ -1,12 +1,13 @@
 'use client'
 
+import { memo } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { Post, useFetchAuthorById, useFormateDateForSinglePost } from '@/entities'
-import { AnimationTypes, CATEGORY_ITEMS, commonStyles, ScrollAnimation, sen } from '@/shared'
+import { AnimationTypes, CATEGORY_ITEMS, commonStyles, paths, ScrollAnimation, sen } from '@/shared'
 
 import { PostText } from './ui/postText'
 
@@ -15,7 +16,7 @@ import styles from './styles.module.scss'
 type Props = {
     post: Post
 }
-export const SinglePost = ({ post: { authorId, title, image, created, category } }: Props) => {
+export const SinglePost = memo(({ post: { authorId, title, image, created, category } }: Props) => {
     const locale = useLocale()
     const t = useTranslations()
     const author = useFetchAuthorById(authorId)
@@ -42,10 +43,10 @@ export const SinglePost = ({ post: { authorId, title, image, created, category }
                             </div>
                         </div>
                         <h1 className={clsx(sen.className, styles.title)}>{title}</h1>
-                        <div className={styles.category}>
+                        <Link href={`/${locale}/${paths.CATEGORY}/${categoryItem?.title}`} className={styles.category}>
                             <div className={styles.iconWrapper}>{categoryItem?.Icon}</div>
                             <p className={clsx(styles.type, sen.className)}>{t(`categories.${categoryItem?.title}`)}</p>
-                        </div>
+                        </Link>
                     </div>
                 </ScrollAnimation>
                 <ScrollAnimation type={AnimationTypes.toLeft}>
@@ -57,4 +58,4 @@ export const SinglePost = ({ post: { authorId, title, image, created, category }
             </div>
         </section>
     )
-}
+})

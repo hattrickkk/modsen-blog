@@ -2,6 +2,7 @@
     margin: auto;
     height: 100vh;
     width: 100vw;
+    @include flex-center;
 
     .wrapper {
         text-align: center;

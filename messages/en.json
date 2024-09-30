@@ -95,7 +95,8 @@
     "author": {
         "title1": "Hey there, I’m",
         "title2": "and welcome to my Blog",
-        "posts": "My Posts"
+        "posts": "My Posts",
+        "noPosts": "This author has not created any posts yet"
     },
     "ourVision": {
         "ourMission": {

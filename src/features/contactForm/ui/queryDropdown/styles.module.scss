@@ -1,5 +1,6 @@
 .dropdown {
     position: relative;
+    z-index: 10;
 
     button {
         border: 1px solid rgba($gray, 0.5);
@@ -52,6 +53,8 @@
         top: 75px;
         width: 100%;
         left: 0;
+        z-index: 20;
+        background-color: red;
 
         &.open {
             height: 500px;
@@ -62,6 +65,7 @@
             border-radius: 2px;
             padding: 12px;
             background-color: $white;
+            background-color: red;
 
             .item {
                 padding: 10px;

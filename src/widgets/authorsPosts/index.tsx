@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
@@ -14,7 +14,7 @@ type Props = {
     allPosts: Post[]
 }
 
-export const AuthorPosts = ({ allPosts }: Props) => {
+export const AuthorPosts = memo(({ allPosts }: Props) => {
     const t = useTranslations('author')
 
     const [page, setPage] = useState(DEFAULT_PAGE)
@@ -43,9 +43,13 @@ export const AuthorPosts = ({ allPosts }: Props) => {
                 <ScrollAnimation type={AnimationTypes.toRight}>
                     <h2 className={clsx(styles.title, sen.className)}>{t('posts')}</h2>
                 </ScrollAnimation>
-                <div className={styles.posts}>
-                    <PostsContainer posts={posts} />
-                </div>
+                {posts.length >= 1 ? (
+                    <div className={styles.posts}>
+                        <PostsContainer posts={posts} />
+                    </div>
+                ) : (
+                    <p className={styles.text}>{t('noPosts')}</p>
+                )}
                 {allPosts.length > POSTS_PER_PAGE && (
                     <Pagination
                         handleNextArrowClick={handleNextArrowClick}
@@ -59,4 +63,4 @@ export const AuthorPosts = ({ allPosts }: Props) => {
             </div>
         </section>
     )
-}
+})
