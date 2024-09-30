@@ -3307,6 +3307,11 @@ chokidar@^4.0.0:
   dependencies:
     readdirp "^4.0.1"
 
+chromatic@^11.11.0:
+  version "11.11.0"
+  resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-11.11.0.tgz#5e5b956464acad22371d88218ea570374b541666"
+  integrity sha512-mwmYsNMsZlRLtlfFUEtac5zhoVRhc+O/lsuMdOpwkiDQiKX6WdSNIhic+dkLenfuzao2r18s50nphcOgFoatBg==
+
 chromatic@^11.4.0:
   version "11.10.4"
   resolved "https://registry.yarnpkg.com/chromatic/-/chromatic-11.10.4.tgz#22f01dc0c7d8c4a71f2aae1c15869738ea412359"
