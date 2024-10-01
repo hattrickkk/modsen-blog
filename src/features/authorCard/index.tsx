@@ -29,7 +29,7 @@ export const AuthorCard = memo(({ author: { image, name, socials, id } }: Props)
     const handleSocialClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => e.stopPropagation(), [])
 
     return (
-        <div className={styles.card} onClick={handleCardClick(id)}>
+        <div className={styles.card} onClick={handleCardClick(id)} data-cy='author-card'>
             <div className={styles.imageWrapper}>
                 <Image src={image} alt='user-profile-photo' width={130} height={130} />
             </div>

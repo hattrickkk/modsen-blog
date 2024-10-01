@@ -39,7 +39,7 @@ export const QueryDropdown = memo(({ query, setQuery }: Props) => {
     useOutsideClick(dropdownRef, closeMenu)
 
     return (
-        <div className={clsx(styles.dropdown, isMenuOpen && styles.open)} ref={dropdownRef}>
+        <div className={clsx(styles.dropdown, isMenuOpen && styles.open)} ref={dropdownRef} data-cy='query-dropdown'>
             <button onClick={handleDropdownClick}>{t(query)}</button>
             <div className={clsx(styles.menuWrapper, isMenuOpen && styles.open)}>
                 <ul className={styles.menu}>
