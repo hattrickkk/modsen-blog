@@ -1,10 +1,11 @@
 'use client'
 
-import React from 'react'
+import { memo } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useLocale, useTranslations } from 'next-intl'
 
+import { Post, useFetchAuthorById, useFormateDate } from '@/entities'
 import { NavigateButton } from '@/features'
 import { sen } from '@/shared/fonts'
 
@@ -14,39 +15,42 @@ import styles from './styles.module.scss'
 
 type Props = {
     inBlog?: boolean
+    post: Post
 }
 
-export const HeroInfo = ({ inBlog = false }: Props) => {
+export const HeroInfo = memo(({ inBlog = false, post: { category, title, authorId, created, text, id } }: Props) => {
     const t = useTranslations()
     const locale = useLocale()
+    const author = useFetchAuthorById(authorId)
+    const date = useFormateDate(created)
+
+    if (!id) return null
+
     return (
         <div className={styles.wrapper}>
             <ScrollAnimation>
                 <h4 className={styles.subtitle}>
-                    {t('hero.subtitle')} <span>{t('categories.startup')}</span>
+                    {t('hero.subtitle')} <span>{t(`categories.${category}`)}</span>
                 </h4>
             </ScrollAnimation>
             <ScrollAnimation delay={0.1}>
-                <h1 className={clsx(styles.title, sen.className)}>{t('hero.title')}</h1>
+                <h1 className={clsx(styles.title, sen.className)}>{title}</h1>
             </ScrollAnimation>
             <ScrollAnimation delay={0.2}>
                 <p className={styles.copyright}>
                     {t('hero.copyright')}{' '}
-                    <Link href={'/'} className={clsx(inBlog && styles.blogLink)}>
-                        James West
+                    <Link href={`/${locale}/author/${authorId}`} className={clsx(inBlog && styles.blogLink)}>
+                        {author.name}
                     </Link>{' '}
-                    | {t('months.may')} 23, 2022
+                    | {date}
                 </p>
             </ScrollAnimation>
             <ScrollAnimation delay={0.3}>
-                <p className={styles.text}>
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur. Excepteur sint occaecat cupidatat non proident.
-                </p>
+                <p className={styles.text}>{text}</p>
             </ScrollAnimation>
             <ScrollAnimation delay={0.4}>
-                <NavigateButton pathName={`/${locale}/post/${1}`} />
+                <NavigateButton pathName={`/${locale}/post/${id}`} />
             </ScrollAnimation>
         </div>
     )
-}
+})

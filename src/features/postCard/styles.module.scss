@@ -14,10 +14,7 @@
 
     .info {
         .subtitle {
-            font-weight: 600;
-            line-height: 20px;
-            letter-spacing: 0.19em;
-            text-transform: uppercase;
+            @include subtitle;
             color: $purple;
             margin-bottom: 20px;
         }

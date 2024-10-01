@@ -1,14 +1,18 @@
+'use client'
+
+import { memo } from 'react'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { NavigateButton } from '@/features'
 import { AnimationTypes, commonStyles, ourStoryBackImage, paths, ScrollAnimation, sen } from '@/shared'
 
 import styles from './styles.module.scss'
 
-export const OurStory = () => {
+export const OurStory = memo(() => {
     const t = useTranslations('ourStory')
+    const locale = useLocale()
     return (
         <section className={styles.section}>
             <div className={commonStyles.container}>
@@ -27,11 +31,11 @@ export const OurStory = () => {
                                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                                 exercitation ullamco laboris nisi ut aliquip.
                             </p>
-                            <NavigateButton pathName={paths.ABOUT} value={t('button')} />
+                            <NavigateButton pathName={`/${locale}/${paths.ABOUT}`} value={t('button')} />
                         </div>
                     </ScrollAnimation>
                 </div>
             </div>
         </section>
     )
-}
+})

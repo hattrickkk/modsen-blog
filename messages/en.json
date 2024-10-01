@@ -95,7 +95,8 @@
     "author": {
         "title1": "Hey there, I’m",
         "title2": "and welcome to my Blog",
-        "posts": "My Posts"
+        "posts": "My Posts",
+        "noPosts": "This author has not created any posts yet"
     },
     "ourVision": {
         "ourMission": {
@@ -155,5 +156,11 @@
         "minsk": "Minsk",
         "greenland": "Greenland",
         "chita": "Chita"
+    },
+    "privacyPolicy": {
+        "privacyPolicy": "Privacy Policy",
+        "title": "How we protect your data",
+        "subtitle": "Processing and protection of personal information",
+        "lastUpdated": "Last Updated  on 27th January 2022"
     }
 }

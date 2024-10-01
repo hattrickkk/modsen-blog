@@ -3,14 +3,20 @@
     flex-direction: column;
     min-height: 100%;
     padding: 128px 0;
+    color: $darkBlue;
+    text-align: left;
 
     .title {
-        text-align: left;
         margin-bottom: 64px;
         font-weight: 700;
         font-size: 48px;
         line-height: 64px;
-        color: $darkBlue;
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
     }
 
     .posts {

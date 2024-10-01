@@ -16,11 +16,7 @@
         }
 
         .subtitle {
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 20px;
-            letter-spacing: 0.19em;
-            text-transform: uppercase;
+            @include subtitle;
             margin-bottom: 24px;
         }
     }

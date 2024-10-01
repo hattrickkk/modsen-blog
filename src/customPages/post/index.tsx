@@ -1,6 +1,6 @@
 'use client'
 
-import { useFetchPostById } from '@/entities/post/utils/hooks'
+import { useFetchPostById } from '@/entities'
 import { SinglePost } from '@/features'
 import { Loader } from '@/shared'
 import { ReadNext, TeamSection } from '@/widgets'
@@ -23,7 +23,7 @@ export const PostPage = ({ params: { id } }: Props) => {
     return (
         <>
             <SinglePost post={post} />
-            <ReadNext />
+            <ReadNext category={post.category} />
             <TeamSection />
         </>
     )

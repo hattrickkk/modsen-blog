@@ -4,6 +4,7 @@ export {
     useFormateDate,
     useFormateDateForSinglePost,
     useFetchPosts,
+    useFetchPostById,
     useFetchPostsByIdsArr,
     useFetchPostsByCategory,
 } from './post/utils/hooks'

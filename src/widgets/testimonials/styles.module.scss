@@ -16,12 +16,8 @@
     }
 
     .subtitle {
-        font-weight: 600;
-        letter-spacing: 0.19em;
-        text-transform: uppercase;
-        color: $darkBlue;
+        @include subtitle;
         margin-bottom: 12px;
-        line-height: 20px;
     }
 }
 

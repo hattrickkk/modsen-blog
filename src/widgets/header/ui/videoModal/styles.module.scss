@@ -71,3 +71,22 @@
         }
     }
 }
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper {
+        iframe {
+            padding: 0 30px;
+            height: 500px;
+            max-width: 768px;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .wrapper {
+        iframe {
+            height: 350px;
+        }
+    }
+}
