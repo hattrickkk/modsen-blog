@@ -37,7 +37,7 @@ export const AuthorInfo = ({ author }: Props) => {
                                 <div className={styles.socials}>
                                     {socials &&
                                         SOCIALS.map(({ Icon }, i) => (
-                                            <a href={socials[i]} key={i}>
+                                            <a href={socials[i]} key={i} data-cy='social-item'>
                                                 <Icon />
                                             </a>
                                         ))}
