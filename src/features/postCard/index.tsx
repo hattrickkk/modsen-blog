@@ -32,6 +32,7 @@ export const PostCard = memo(
             <div
                 className={clsx(styles.card, inColumn && styles.column, fromCategories && styles.fromCategory)}
                 data-cy='post-card'
+                data-testid='post-card'
             >
                 <div className={styles.imageWrapper}>
                     <Image src={image as string} alt='post-photo' width={490} height={320} />
