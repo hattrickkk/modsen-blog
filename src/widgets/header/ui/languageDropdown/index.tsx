@@ -30,7 +30,7 @@ export const LanguageDropdown = memo(() => {
         [locale, pathname, router]
     )
     return (
-        <div className={styles.dropdown} ref={dropdownRef}>
+        <div className={styles.dropdown} ref={dropdownRef} data-cy='language-dropdown'>
             <div className={styles.imageWrapper} onClick={isMenuOpen ? closeMenu : openMenu}>
                 <Image src={languageIcon} alt='language-icon' />
             </div>

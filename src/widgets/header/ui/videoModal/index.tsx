@@ -33,7 +33,7 @@ export const VideoModal = memo(({ isFrameOpen, closeFrame }: Props) => {
     return createPortal(
         <div className={clsx(styles.wrapper, isFrameOpen && styles.open)}>
             <button onClick={closeFrame} className={styles.closeButton}>
-                <span />
+                <span data-cy='video-close' />
             </button>
 
             {isLoading && isFrameOpen && <Loader />}
