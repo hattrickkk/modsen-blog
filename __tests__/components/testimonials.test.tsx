@@ -28,38 +28,4 @@ describe('Slider Component', () => {
         expect(screen.getByText(TESTIMONIALS[1].name)).toBeInTheDocument()
         expect(screen.queryByTestId('prev-arrow')).toBeInTheDocument()
     })
-
-    // it('should move to the previous comment when prev arrow is clicked', () => {
-    //     render(<Slider />)
-
-    //     // Move to the second comment first by clicking next
-    //     const nextArrow = screen.getByRole('button', { name: /next/i })
-    //     fireEvent.click(nextArrow)
-
-    //     // Simulate clicking the previous arrow
-    //     const prevArrow = screen.getByRole('button', { name: /prev/i })
-    //     fireEvent.click(prevArrow)
-
-    //     // Check if the first comment is visible again after the click
-    //     expect(screen.getByText(TESTIMONIALS[0].text)).toBeInTheDocument()
-
-    //     // Previous arrow should no longer be visible
-    //     expect(screen.queryByRole('button', { name: /prev/i })).not.toBeInTheDocument()
-    // })
-
-    // it('should hide the next arrow when on the last slide', () => {
-    //     render(<Slider />)
-
-    //     // Move to the last slide by clicking the next arrow until the last comment is displayed
-    //     const nextArrow = screen.getByRole('button', { name: /next/i })
-    //     while (screen.queryByRole('button', { name: /next/i })) {
-    //         fireEvent.click(nextArrow)
-    //     }
-
-    //     // Check if the last comment is visible
-    //     expect(screen.getByText(TESTIMONIALS[TESTIMONIALS.length - 1].text)).toBeInTheDocument()
-
-    //     // Next arrow should not be visible on the last slide
-    //     expect(screen.queryByRole('button', { name: /next/i })).not.toBeInTheDocument()
-    // })
 })
