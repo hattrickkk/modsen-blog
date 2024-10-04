@@ -31,7 +31,7 @@ export const Button = ({
             className={clsx(
                 styles.button,
                 sen.className,
-                view === ButtonViews.SECONDARY && styles.secondary,
+                styles[view],
                 disabled && styles.disabled,
                 isSubmitting && styles.submitting
             )}
