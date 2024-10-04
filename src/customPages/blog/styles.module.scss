@@ -1,0 +1,10 @@
+.wrapper {
+    & > *:nth-child(3) h2 {
+        text-align: left;
+    }
+
+    & > *:last-child section,
+    & > *:nth-child(3) {
+        padding-top: 0;
+    }
+}

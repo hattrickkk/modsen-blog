@@ -1,0 +1,92 @@
+.wrapper {
+    @include flex-center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 120;
+    background-color: rgba($black, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    iframe {
+        position: absolute;
+    }
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.closeButton {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    span {
+        cursor: pointer;
+        position: absolute;
+        transition: all 0.3s ease;
+        width: 45px;
+        height: 45px;
+        display: block;
+        border-radius: 100%;
+        margin-right: 5px;
+        top: 15px;
+        right: 10px;
+
+        &::before,
+        &::after {
+            content: '';
+            background-color: $white;
+            width: 25px;
+            height: 2px;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            background-color: rgba($white, 0.1);
+        }
+
+        &:hover::after,
+        &:hover::before {
+            background-color: $yellow;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper {
+        iframe {
+            padding: 0 30px;
+            height: 500px;
+            max-width: 768px;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .wrapper {
+        iframe {
+            height: 350px;
+        }
+    }
+}

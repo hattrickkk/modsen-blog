@@ -1,0 +1,63 @@
+.section {
+    padding: 80px 110px;
+    background-color: $lightYellow;
+    @include flex-space-between;
+    align-items: stretch;
+
+    .info {
+        padding-right: 80px;
+        border-right: 1px solid rgba($gray, 0.5);
+        min-height: 100%;
+    }
+
+    .title {
+        margin-bottom: 16px;
+        text-align: left;
+    }
+
+    .subtitle {
+        @include subtitle;
+        margin-bottom: 12px;
+    }
+}
+
+@media screen and (max-width: $DESKTOP) {
+    .section {
+        padding: 60px;
+
+        .info {
+            padding-right: 55px;
+        }
+
+        .title {
+            line-height: 42px;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .section {
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 40px;
+
+        .info {
+            padding-right: 0;
+            padding-bottom: 40px;
+            border: none;
+            border-bottom: 1px solid rgba($gray, 0.5);
+        }
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .section {
+        padding: 45px;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section {
+        padding: 25px;
+    }
+}

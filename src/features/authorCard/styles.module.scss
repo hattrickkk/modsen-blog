@@ -1,0 +1,48 @@
+.card {
+    padding: 32px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    background-color: $lightGray;
+    @include flex-space-between;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+        background-color: $lightYellow;
+    }
+
+    .imageWrapper {
+        width: 130px;
+        height: 130px;
+        border-radius: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        img {
+            @include image;
+        }
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 30px;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+        color: $darkBlue;
+        text-align: center;
+    }
+
+    .text {
+        font-size: 14px;
+        color: $gray;
+        margin-bottom: 20px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .socials {
+        @include flex-space-between;
+        gap: 16px;
+    }
+}

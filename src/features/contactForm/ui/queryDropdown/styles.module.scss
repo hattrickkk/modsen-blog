@@ -1,0 +1,100 @@
+.dropdown {
+    position: relative;
+    z-index: 10;
+
+    button {
+        border: 1px solid rgba($gray, 0.5);
+        border-radius: 2px;
+        padding: 22px;
+        padding-right: 50px;
+        font-size: 16px;
+        background-color: $white;
+        text-align: left;
+        position: relative;
+        z-index: 10;
+
+        &:focus {
+            border: 1px solid $purple;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            width: 10px;
+            height: 1.5px;
+            background-color: $darkBlue;
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transition: all 0.4s ease;
+        }
+
+        &::before {
+            transform: translateX(-6.5px) rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &.open {
+        button {
+            &::before {
+                transform: translateX(-6.5px) rotate(-45deg);
+            }
+
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .menuWrapper {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        position: absolute;
+        top: 75px;
+        width: 100%;
+        left: 0;
+        z-index: 20;
+
+        &.open {
+            height: 500px;
+        }
+
+        .menu {
+            border: 1px solid rgba($gray, 0.5);
+            border-radius: 2px;
+            padding: 12px;
+            background-color: $white;
+
+            .item {
+                padding: 10px;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba($gray, 0.1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper .header {
+        margin-bottom: 45px;
+
+        .title {
+            font-size: 40px;
+            line-height: 52px;
+            margin-bottom: 24px;
+        }
+
+        .text {
+            color: rgba($gray, 0.85);
+        }
+    }
+}

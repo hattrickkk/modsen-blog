@@ -1,0 +1,89 @@
+.wrapper {
+    margin-bottom: 48px;
+
+    .title {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .categoriesWrapper {
+        @include flex-space-between;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 24px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        width: 100%;
+        border: 1.5px solid rgba($gray, 0.3);
+
+        &:hover,
+        &.active {
+            background-color: $yellow;
+            border-color: $yellow;
+        }
+
+        .iconWrapper {
+            background-color: $lightYellow;
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            @include flex-center;
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 40px;
+            color: $darkBlue;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .wrapper {
+        .title {
+            margin-bottom: 25px;
+        }
+
+        .categoriesWrapper {
+            flex-wrap: wrap;
+            flex-direction: row;
+
+            & > * {
+                flex: 1 1 45%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $TABLET) {
+    .wrapper {
+        .categoriesWrapper {
+            & > * {
+                flex: 1 1 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .wrapper {
+        .categoriesWrapper {
+            .item {
+                padding: 18px;
+                gap: 12px;
+
+                .name {
+                    font-size: 22px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}

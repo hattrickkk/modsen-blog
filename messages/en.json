@@ -1,0 +1,166 @@
+{
+    "header": {
+        "video": "Video About Us"
+    },
+    "menuItems": {
+        "home": "Home",
+        "blog": "Blog",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "privacyPolicy": "Privacy Policy"
+    },
+    "language": {
+        "en": "English",
+        "ru": "Russian"
+    },
+    "hero": {
+        "subtitle": "Posted on",
+        "title": "Step-by-step guide to choosing great font pairs",
+        "copyright": "By",
+        "month": "Май",
+        "text": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
+    },
+    "button": {
+        "title": "Read More >"
+    },
+    "categories": {
+        "business": "Business",
+        "startup": "Startup",
+        "economy": "Economy",
+        "technology": "Technology",
+        "title": "Choose A Category",
+        "categories": "Categories"
+    },
+    "posts": {
+        "featuredPost": "Featured Post",
+        "allPosts": "All Posts",
+        "viewAll": "View All"
+    },
+    "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+    },
+    "about": {
+        "aboutUs": "About Us",
+        "ourMission": "Our Misson",
+        "title": "We are a community of content writers who share their learnings",
+        "subtitle": "Creating valuable content for creatives all around the world"
+    },
+    "ourStory": {
+        "subtitle": "Why we started",
+        "title": "It started out as a simple idea and evolved into our passion",
+        "button": "Discover our story"
+    },
+    "partners": {
+        "subtitle": "We are",
+        "title": "Featured in"
+    },
+    "authors": {
+        "title": "List of Authors"
+    },
+    "testimonials": {
+        "subtitle": "testimonials",
+        "title": "What people say about our blog"
+    },
+    "team": {
+        "button": "Join now",
+        "title": "Join our team to be a part of our story"
+    },
+    "footer": {
+        "button": "Subscribe",
+        "placeholder": "Enter Your Email",
+        "emailError": "Invalid email address",
+        "title": "Subscribe to our news letter to get latest updates and news",
+        "address": "Finstreet 118 2561 Fintown"
+    },
+    "arrows": {
+        "next": "Next",
+        "prev": "Prev"
+    },
+    "singlePost": {
+        "ending": "th",
+        "posted": "Posted on",
+        "title": "What to read next"
+    },
+    "author": {
+        "title1": "Hey there, I’m",
+        "title2": "and welcome to my Blog",
+        "posts": "My Posts",
+        "noPosts": "This author has not created any posts yet"
+    },
+    "ourVision": {
+        "ourMission": {
+            "title1": "Creating valuable content for creatives all around the world",
+            "subtitle1": "our mission",
+            "title2": "A platform that empowers individuals to improve",
+            "subtitle2": "our vision"
+        },
+        "overview": {
+            "blogs": "Blogs Published",
+            "views": "Views on Finsweet",
+            "users": "Total active Users"
+        }
+    },
+    "knowAboutTeam": {
+        "title1": "Our team of creatives",
+        "subtitle1": "Our team of creatives brings innovative ideas to life, crafting unique solutions with passion and expertise",
+        "title2": "Why we started this Blog",
+        "subtitle2": "We started this blog to share our knowledge, inspire creativity, and connect with like-minded individuals around the world"
+    },
+    "categoryPage": {
+        "title": "All Tags",
+        "clearTags": "Clear Tags",
+        "search": "Search",
+        "searchPlaceholder": "Search for tag...",
+        "seeAll": "See All >",
+        "nothingFound": "There are no posts in this category"
+    },
+    "contact": {
+        "contactUs": "Contact us",
+        "title": "Let’s Start a Conversation",
+        "workingHours": "Working hours",
+        "mondayToFriday": "Monday To Friday",
+        "available": "Our Support Team is available 24/7",
+        "fullName": "Full Name",
+        "email": "Your Email",
+        "queryRelated": "Query Related",
+        "queries": {
+            "ownBlog": "Creating your own blog",
+            "personalGrowth": "Personal growth",
+            "creativeContent": "Creating creative content",
+            "team": "Organizing a cohesive team",
+            "potential": "Realizing your own potential"
+        },
+        "message": "Message",
+        "sendMessage": "Send Message"
+    },
+    "messages": {
+        "letter": "Thanks for lettering to us!",
+        "subscribe": "Thanks for subscribing to our blog!",
+        "fail": "Something went wrong",
+        "invalidEmail": "Invalid email address",
+        "nameMin": "Fill more than 2 characters",
+        "messageFill": "Fill the field"
+    },
+    "points": {
+        "minsk": "Minsk",
+        "greenland": "Greenland",
+        "chita": "Chita"
+    },
+    "privacyPolicy": {
+        "privacyPolicy": "Privacy Policy",
+        "title": "How we protect your data",
+        "subtitle": "Processing and protection of personal information",
+        "lastUpdated": "Last Updated  on 27th January 2022"
+    }
+}

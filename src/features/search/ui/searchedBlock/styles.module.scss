@@ -1,0 +1,35 @@
+.wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    width: 100%;
+
+    &.open {
+        height: 243px;
+    }
+
+    .block {
+        padding: 7px;
+        border-radius: 6px;
+        border: 1px solid rgba($gray, 0.5);
+        max-height: 243px;
+        overflow-y: scroll;
+        background-color: $white;
+
+        & > *:not(:last-child) {
+            margin-bottom: 3px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba($gray, 0.3);
+            border-radius: 5px;
+        }
+    }
+}

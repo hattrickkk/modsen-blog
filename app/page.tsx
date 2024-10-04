@@ -1,1 +1,5 @@
-export { Home as default } from '@/customPages'
+import { redirect } from 'next/navigation'
+
+export default function RootPage() {
+    redirect('/en')
+}

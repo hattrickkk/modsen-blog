@@ -1,0 +1,109 @@
+.header {
+    position: relative;
+    padding-bottom: 80px;
+
+    .wrapper {
+        @include flex-space-between;
+        position: absolute;
+        z-index: 20;
+        gap: 32px;
+        max-width: 1230px;
+        top: -210px;
+
+        .block {
+            padding: 64px;
+            background-color: $white;
+            max-width: 625px;
+            margin-left: 108px;
+
+            .title {
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 64px;
+                color: $darkBlue;
+            }
+
+            .subtitle {
+                @include subtitle;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+        }
+
+        .text {
+            flex: 0 1 550px;
+            padding: 80px 30px 80px 0;
+        }
+    }
+}
+
+@media screen and (max-width: $DESKTOP) {
+    .header {
+        .wrapper {
+            top: -260px;
+
+            .block {
+                max-width: 550px;
+                margin-left: 50px;
+
+                .title {
+                    font-size: 46px;
+                    line-height: 60px;
+                }
+            }
+
+            .text {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_DESKTOP) {
+    .header {
+        .wrapper {
+            top: -260px;
+
+            .block {
+                max-width: 420px;
+                padding: 35px;
+
+                .title {
+                    font-size: 42px;
+                    line-height: 54px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .header {
+        padding-bottom: 70px;
+
+        .wrapper {
+            flex-direction: column;
+            position: relative;
+            top: auto;
+            left: auto;
+
+            .block {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .text {
+                padding: 0;
+                flex-basis: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .header .wrapper .block .title {
+        font-size: 34px;
+        line-height: 42px;
+    }
+}

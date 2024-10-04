@@ -1,0 +1,27 @@
+.hero {
+    height: 720px;
+    padding-top: 80px;
+    @include flex-center;
+    color: $white;
+    background:
+        radial-gradient(circle, rgba($black, 0.6), rgba($black, 0.6)),
+        url('/hero.png') center center / cover no-repeat;
+
+    & > * {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .hero {
+        padding: 90px 0 30px;
+        height: 520px;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .hero {
+        padding-top: 100px;
+        height: auto;
+    }
+}

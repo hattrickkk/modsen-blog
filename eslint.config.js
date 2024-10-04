@@ -11,7 +11,7 @@ import airbnb from 'eslint-config-airbnb'
 import { fixupPluginRules } from '@eslint/compat'
 
 export default tseslint.config(
-    { ignores: ['/.git', 'node_modules', './github', 'build', '.next'] },
+    { ignores: ['/.git', 'node_modules', './github', 'build', '.next', 'storybook-static'] },
     {
         extends: [
             js.configs.recommended,
@@ -41,16 +41,13 @@ export default tseslint.config(
             'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
             'prettier/prettier': 'error',
             'no-unused-vars': 'error',
+            'react-refresh/only-export-components': 'off',
+            '@typescript-eslint/no-unused-expressions': 'off',
             'no-console': ['warn', { allow: ['warn', 'error'] }],
             'simple-import-sort/imports': [
                 'error',
                 {
-                    groups: [
-                        ['^react', '^@?\\w'],
-                        ['^(@/.*|$)'],
-                        ['^\\.'],
-                        ['^@styles/.*\\.scss$', '^.+\\.s?css$'],
-                    ],
+                    groups: [['^react', '^@?\\w'], ['^(@/.*|$)'], ['^\\.'], ['^@styles/.*\\.scss$', '^.+\\.s?css$']],
                 },
             ],
             'prefer-arrow-callback': ['error', { allowNamedFunctions: false }],

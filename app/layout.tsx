@@ -1,14 +1,22 @@
 import { ReactNode } from 'react'
 
-import './nullStyle.scss'
+import { Locale } from '@/shared'
 
-const RootLayout = ({ children }: { children: ReactNode }) => {
+import ErrorBoundary from './global-error'
+
+type Props = {
+    children: ReactNode
+    params: { locale: Locale }
+}
+
+const AppLayout = async ({ children, params: { locale } }: Props) => {
     return (
-        <html lang='en'>
+        <html lang={locale}>
             <body>
-                <main>{children}</main>
+                <ErrorBoundary>{children}</ErrorBoundary>
             </body>
         </html>
     )
 }
-export default RootLayout
+
+export default AppLayout

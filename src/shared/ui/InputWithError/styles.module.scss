@@ -1,0 +1,12 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+
+    input {
+        width: 100%;
+    }
+
+    .error {
+        @include errorMessage;
+    }
+}

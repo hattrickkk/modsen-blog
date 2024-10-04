@@ -1,0 +1,29 @@
+.section {
+    padding: 128px 0;
+
+    .wrapper {
+        max-width: 415px;
+        margin: 0 auto;
+        text-align: center;
+
+        .title {
+            margin-bottom: 16px;
+        }
+
+        .text {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section {
+        padding: 90px 0;
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section {
+        padding: 65px 0;
+    }
+}

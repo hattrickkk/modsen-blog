@@ -1,0 +1,114 @@
+.section {
+    margin: 210px 0 90px;
+
+    .top {
+        max-width: 768px;
+        margin: 0 auto 64px;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 64px;
+        color: $darkBlue;
+        margin-bottom: 34px;
+    }
+
+    .category {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .type {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+            color: $darkBlue;
+        }
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+
+        .avatarWrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            overflow: hidden;
+
+            img {
+                @include image;
+            }
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 40px;
+            color: $purple;
+        }
+    }
+
+    .imageWrapper {
+        height: 582px;
+        overflow: hidden;
+        margin-bottom: 64px;
+
+        img {
+            @include image;
+        }
+    }
+}
+
+@media screen and (max-width: $SMALL_TABLET) {
+    .section {
+        margin: 150px 0 60px;
+
+        .title {
+            font-size: 38px;
+            line-height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .top {
+            margin: 0 auto 35px;
+        }
+
+        .imageWrapper {
+            height: 300px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: $PHONE) {
+    .section {
+        margin-top: 135px;
+
+        .title {
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        .author {
+            gap: 10px;
+
+            .avatarWrapper {
+                width: 35px;
+                height: 35px;
+            }
+
+            .name {
+                font-size: 24px;
+                line-height: 36px;
+            }
+
+            .date {
+                font-size: 14px;
+            }
+        }
+    }
+}

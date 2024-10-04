@@ -1,0 +1,27 @@
+.wrapper {
+    @include flex-space-between;
+    flex-direction: column;
+    min-height: 100%;
+
+    .header {
+        @include flex-space-between;
+        margin-bottom: 32px;
+        width: 100%;
+
+        a {
+            color: $purple;
+        }
+    }
+
+    .posts {
+        @include flex-space-between;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+}
+
+@media screen and (max-width: $LARGE_TABLET) {
+    .wrapper .header {
+        margin-bottom: 16px;
+    }
+}
