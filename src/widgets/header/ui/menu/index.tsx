@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { Button, isLinkActive, MENU_ITEMS, useOpenState, useOutsideClick } from '@/shared'
+import { Button, ButtonViews, isLinkActive, MENU_ITEMS, useOpenState, useOutsideClick } from '@/shared'
 
 import { LanguageDropdown } from '../languageDropdown'
 import { VideoModal } from '../videoModal'
@@ -40,7 +40,7 @@ export const Menu = memo(() => {
                     ))}
                     <LanguageDropdown />
                 </ul>
-                <Button onClick={openFrame} secondary>
+                <Button onClick={openFrame} view={ButtonViews.SECONDARY}>
                     {t('header.video')}
                 </Button>
             </div>

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 
-import { Button } from '@/shared'
+import { Button, ButtonViews } from '@/shared'
 
 import '../app/styles/nullStyle.scss'
 
@@ -30,12 +30,13 @@ const meta = {
                 type: 'boolean',
             },
         },
-        secondary: {
-            type: 'boolean',
-            description: 'Is this button secondary or not',
-            defaultValue: false,
+        view: {
+            type: 'string',
+            description: 'This option allows you to set the button type',
+            defaultValue: ButtonViews.PRIMARY,
+            options: [ButtonViews.PRIMARY, ButtonViews.SECONDARY],
             control: {
-                type: 'boolean',
+                type: 'radio',
             },
         },
         children: {
@@ -66,6 +67,6 @@ export const Submittimg: Story = {
 
 export const Secondary: StoryObj = {
     args: {
-        secondary: true,
+        view: ButtonViews.SECONDARY,
     },
 }

@@ -17,6 +17,7 @@ export { MENU_ITEMS } from './constants/menuItems'
 export { NOTIFY_OPTIONS } from './constants/notifyOptions'
 export { AnimationTypes } from './constants/animationTypes'
 export { MessagesKeys } from './constants/messagesKeys'
+export { ButtonViews } from './constants/buttonViews'
 export { AUTHOR } from './mocks/author'
 export { POST, POSTS } from './mocks/posts'
 export {
