@@ -27,7 +27,7 @@ describe('Subscribe', () => {
     it('should submit the form with valid email and shows success message', async () => {
         render(<Subscribe />, { wrapper: AllProviders })
 
-        mockSendEmail.mockResolvedValueOnce({ status: 200, message: 'success' }) // Мок успешного ответа
+        mockSendEmail.mockResolvedValueOnce({ status: 200, message: 'success' })
 
         fireEvent.input(screen.getByPlaceholderText('Enter Your Email'), {
             target: { value: 'test@example.com' },

@@ -46,7 +46,6 @@ describe('Home page testing', () => {
     it('video plays and modal closes correctly', () => {
         homePage.videoButton.click()
         cy.getByDataCy('loader').should('exist')
-        cy.wait(3000)
         cy.getByDataCy('video-close').click()
         cy.getByDataCy('loader').should('not.exist')
     })

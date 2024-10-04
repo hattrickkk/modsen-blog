@@ -39,5 +39,5 @@
         "**/__tests__",
         "i18n.js"
     ],
-    "exclude": ["node_modules", "build"]
+    "exclude": ["node_modules", "build", "storybook-static"]
 }
