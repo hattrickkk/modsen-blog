@@ -28,6 +28,8 @@ export const BlogSection = () => {
     const handleNextArrowClick = useCallback(() => setPage(prevPage => prevPage + 1), [])
     const handlePrevArrowClick = useCallback(() => setPage(prevPage => prevPage - 1), [])
 
+    const MAX_ALLOWED_PAGE = getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: postsCount })
+
     if (loading)
         return (
             <div className={styles.wrapper}>
@@ -48,10 +50,8 @@ export const BlogSection = () => {
                     <Pagination
                         handlePrevArrowClick={handlePrevArrowClick}
                         handleNextArrowClick={handleNextArrowClick}
-                        prevDisableCondition={page <= 1}
-                        nextDisableCondition={
-                            page === getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: postsCount })
-                        }
+                        prevDisableCondition={page <= DEFAULT_PAGE}
+                        nextDisableCondition={page === MAX_ALLOWED_PAGE}
                     />
                 )}
             </div>

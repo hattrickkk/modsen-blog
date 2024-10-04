@@ -1,8 +1,9 @@
 import { expect } from '@jest/globals'
 
 import { fetchPosts } from '@/entities'
-import { API_URL, Category } from '@/shared'
+import { Category } from '@/shared'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 global.fetch = jest.fn() as jest.Mock
 
 const basedPost = {

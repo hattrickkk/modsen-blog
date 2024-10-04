@@ -21,7 +21,6 @@ export { AUTHOR } from './mocks/author'
 export { POST, POSTS } from './mocks/posts'
 export {
     POSTS_PER_PAGE,
-    API_URL,
     NEXT_ARROW,
     PREV_ARROW,
     DEFAULT_PAGE,

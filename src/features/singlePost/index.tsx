@@ -20,7 +20,7 @@ export const SinglePost = memo(({ post: { authorId, title, image, created, categ
     const locale = useLocale()
     const t = useTranslations()
     const author = useFetchAuthorById(authorId)
-    const categoryItem = CATEGORY_ITEMS.find(el => el.title == category)
+    const categoryItem = CATEGORY_ITEMS.find(el => el.title === category)
     const formatedDate = useFormateDateForSinglePost(created)
 
     return (
