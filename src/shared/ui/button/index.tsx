@@ -4,14 +4,14 @@ import { ReactNode } from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
-import { sen } from '@/shared'
+import { ButtonViews, sen } from '@/shared'
 
 import styles from './styles.module.scss'
 
 type Props = {
     children?: ReactNode
     onClick?: VoidFunction
-    secondary?: boolean
+    view?: ButtonViews
     type?: 'button' | 'submit'
     disabled?: boolean
     isSubmitting?: boolean
@@ -20,7 +20,7 @@ type Props = {
 export const Button = ({
     children,
     onClick,
-    secondary = false,
+    view = ButtonViews.PRIMARY,
     type = 'button',
     disabled = false,
     isSubmitting = false,
@@ -31,7 +31,7 @@ export const Button = ({
             className={clsx(
                 styles.button,
                 sen.className,
-                secondary && styles.secondary,
+                styles[view],
                 disabled && styles.disabled,
                 isSubmitting && styles.submitting
             )}

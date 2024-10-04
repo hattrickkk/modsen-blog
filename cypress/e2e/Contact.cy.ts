@@ -27,6 +27,9 @@ describe('Contact page testing', () => {
     })
 
     it('type correct data', () => {
+        cy.intercept('POST', '**/email/send', {
+            statusCode: 200,
+        }).as('messageSend')
         contactPage.sendButton.should('have.css', 'pointer-events', 'none')
         contactPage.type('Full Name', 'some name')
         contactPage.type('Your Email', 'test@test.com')
@@ -34,7 +37,7 @@ describe('Contact page testing', () => {
         cy.getByDataCy('query-dropdown').click()
         cy.contains('Personal growth').click()
         contactPage.sendButton.click()
-        cy.wait(3000)
+        cy.wait('@messageSend').its('response.statusCode').should('eq', 200)
         cy.contains('Thanks for lettering to us!')
         contactPage.getInput('Full Name').should('have.value', '')
         contactPage.getInput('Your Email').should('have.value', '')

@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
 import { getPagesCount, Post, useFetchPosts, useFetchPostsByCategory } from '@/entities'
@@ -49,6 +49,15 @@ export const CategoryPage = ({ params: { type } }: Props) => {
     const handleNextArrowClick = useCallback(() => setPage(prevPage => prevPage + 1), [])
     const handlePrevArrowClick = useCallback(() => setPage(prevPage => prevPage - 1), [])
 
+    const MAX_ALLOWED_PAGE = useMemo(
+        () =>
+            getPagesCount({
+                itemsPerPage: POSTS_PER_PAGE_SECTION,
+                totalCount: !selectedTags.length ? allCategoryPosts.length : allCategoryFilteredPostsCount,
+            }),
+        [allCategoryFilteredPostsCount, allCategoryPosts.length, selectedTags.length]
+    )
+
     return (
         <>
             <CategoryBanner category={type} />
@@ -73,16 +82,8 @@ export const CategoryPage = ({ params: { type } }: Props) => {
                                     <Pagination
                                         handlePrevArrowClick={handlePrevArrowClick}
                                         handleNextArrowClick={handleNextArrowClick}
-                                        prevDisableCondition={page <= 1}
-                                        nextDisableCondition={
-                                            page ===
-                                            getPagesCount({
-                                                itemsPerPage: POSTS_PER_PAGE_SECTION,
-                                                totalCount: !selectedTags.length
-                                                    ? allCategoryPosts.length
-                                                    : allCategoryFilteredPostsCount,
-                                            })
-                                        }
+                                        prevDisableCondition={page <= DEFAULT_PAGE}
+                                        nextDisableCondition={page === MAX_ALLOWED_PAGE}
                                     />
                                 </div>
                             </>

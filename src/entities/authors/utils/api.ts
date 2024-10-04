@@ -1,4 +1,6 @@
-import { API_URL, FetchParams } from '@/shared'
+import { FetchParams } from '@/shared'
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 export const fetchAuthors = async ({ page, limit }: FetchParams) => {
     const response = await fetch(`${API_URL}/authors?page=${page}&limit=${limit}`)

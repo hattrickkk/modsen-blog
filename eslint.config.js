@@ -11,7 +11,7 @@ import airbnb from 'eslint-config-airbnb'
 import { fixupPluginRules } from '@eslint/compat'
 
 export default tseslint.config(
-    { ignores: ['/.git', 'node_modules', './github', 'build', '.next'] },
+    { ignores: ['/.git', 'node_modules', './github', 'build', '.next', 'storybook-static'] },
     {
         extends: [
             js.configs.recommended,

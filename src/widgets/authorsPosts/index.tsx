@@ -37,6 +37,8 @@ export const AuthorPosts = memo(({ allPosts }: Props) => {
         setPage(prevPage => prevPage - 1)
     }, [allPosts, startIndex])
 
+    const MAX_ALLOWED_PAGE = getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: allPosts.length })
+
     return (
         <section className={styles.section}>
             <div className={commonStyles.container}>
@@ -54,10 +56,8 @@ export const AuthorPosts = memo(({ allPosts }: Props) => {
                     <Pagination
                         handleNextArrowClick={handleNextArrowClick}
                         handlePrevArrowClick={handlePrevArrowClick}
-                        prevDisableCondition={page <= 1}
-                        nextDisableCondition={
-                            page === getPagesCount({ itemsPerPage: POSTS_PER_PAGE, totalCount: allPosts.length })
-                        }
+                        prevDisableCondition={page <= DEFAULT_PAGE}
+                        nextDisableCondition={page === MAX_ALLOWED_PAGE}
                     />
                 )}
             </div>

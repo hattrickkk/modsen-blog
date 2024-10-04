@@ -27,6 +27,10 @@ class ErrorBoundary extends Component<Props, State> {
         return { hasError: true, errorMessage: error.message, errorName: error.name }
     }
 
+    componentDidCatch(error: Error) {
+        console.error(`error occured: ${error}`)
+    }
+
     reloadClickHandler = () => this.setState(initValue)
 
     render() {

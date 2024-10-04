@@ -30,6 +30,9 @@ export const WorldMap = memo(() => {
         },
         []
     )
+
+    const handlePopupOnClose = useCallback(() => setSelectedPoint(null), [])
+
     return (
         <ScrollAnimation type={AnimationTypes.toLeft}>
             <div className={styles.map}>
@@ -51,7 +54,7 @@ export const WorldMap = memo(() => {
                         <Popup
                             longitude={selectedPoint.longitude}
                             latitude={selectedPoint.latitude}
-                            onClose={() => setSelectedPoint(null)}
+                            onClose={handlePopupOnClose}
                             anchor='bottom'
                         >
                             {t(selectedPoint.title)}
