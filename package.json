@@ -13,6 +13,7 @@
         "prepare": "husky install",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
+        "chromatic": "cross-env CHROMATIC_PROJECT_TOKEN=${CHROMATIC_PROJECT_TOKEN} chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --auto-accept-changes",
         "cypress": "cypress open",
         "test:cypress": "start-server-and-test dev http://localhost:3000 cypress",
         "test:jest": "jest",
